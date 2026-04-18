@@ -1,0 +1,215 @@
+/* ============================================================
+   src/styles/Loader.css
+   Landing page loader with bouncing dot animation
+   ============================================================ */
+
+.loader-container {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--black);
+  z-index: 9999;
+  pointer-events: all;
+  animation: loaderFadeIn 0.6s ease-out forwards;
+}
+
+.loader-container.loader-fade-out {
+  animation: loaderFadeOut 0.8s ease-out forwards;
+  pointer-events: none;
+}
+
+/* Fade in animation for initial appearance */
+@keyframes loaderFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Fade out animation to exit */
+@keyframes loaderFadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.loader-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    var(--black) 0%,
+    rgba(184, 255, 87, 0.03) 50%,
+    var(--black) 100%
+  );
+  opacity: 0.5;
+}
+
+.loader-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+
+/* ============================================================
+   BOUNCING DOTS ANIMATION
+   ============================================================ */
+
+.loader-dots-animation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  height: 60px;
+  min-height: 60px;
+}
+
+.dot-bounce {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 15px rgba(184, 255, 87, 0.6);
+  animation: dotBounceAnimation 1.4s infinite ease-in-out;
+}
+
+.dot-bounce:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.dot-bounce:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.dot-bounce:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.dot-bounce:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.dot-bounce:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+@keyframes dotBounceAnimation {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.6;
+    box-shadow: 0 0 15px rgba(184, 255, 87, 0.6);
+  }
+  50% {
+    transform: translateY(-20px);
+    opacity: 1;
+    box-shadow: 0 0 25px rgba(184, 255, 87, 0.9);
+  }
+}
+
+/* ============================================================
+   BOTTOM ANIMATED LINE
+   ============================================================ */
+
+.loader-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--accent),
+    transparent
+  );
+  box-shadow: 0 0 10px var(--accent), 0 0 20px rgba(184, 255, 87, 0.4);
+  animation: lineAnimation 3s ease-in-out infinite;
+}
+
+@keyframes lineAnimation {
+  0% {
+    width: 0;
+    left: 0;
+  }
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 100%;
+    left: 0;
+    opacity: 0.3;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN
+   ============================================================ */
+
+@media (max-width: 767px) {
+  .loader-dots-animation {
+    gap: 0.5rem;
+    height: 40px;
+    min-height: 40px;
+  }
+
+  .dot-bounce {
+    width: 10px;
+    height: 10px;
+    animation: dotBounceMobile 1.4s infinite ease-in-out;
+  }
+
+  @keyframes dotBounceMobile {
+    0%, 100% {
+      transform: translateY(0);
+      opacity: 0.6;
+      box-shadow: 0 0 12px rgba(184, 255, 87, 0.5);
+    }
+    50% {
+      transform: translateY(-15px);
+      opacity: 1;
+      box-shadow: 0 0 20px rgba(184, 255, 87, 0.8);
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .loader-dots-animation {
+    gap: 0.7rem;
+    height: 55px;
+    min-height: 55px;
+  }
+
+  .dot-bounce {
+    width: 11px;
+    height: 11px;
+    animation: dotBounceTablet 1.4s infinite ease-in-out;
+  }
+
+  @keyframes dotBounceTablet {
+    0%, 100% {
+      transform: translateY(0);
+      opacity: 0.6;
+      box-shadow: 0 0 15px rgba(184, 255, 87, 0.6);
+    }
+    50% {
+      transform: translateY(-18px);
+      opacity: 1;
+      box-shadow: 0 0 22px rgba(184, 255, 87, 0.85);
+    }
+  }
+}

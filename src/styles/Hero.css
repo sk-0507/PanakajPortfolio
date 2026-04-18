@@ -1,0 +1,267 @@
+/* ============================================================
+   src/styles/Hero.css
+   ============================================================ */
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+
+/* Subtle accent glow bottom-right */
+.hero::before {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(184, 255, 87, 0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ── Tagline ── */
+.hero__tagline {
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--light-gray);
+  margin-bottom: 20px;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* ── Draggable name card ── */
+.hero__card {
+  position: relative;
+  /* border: 1.5px dashed rgba(255, 255, 255, 0.2); */
+  padding: 30px 50px;
+  cursor: grab;
+  user-select: none;
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+
+.hero__card:active {
+  cursor: grabbing;
+}
+
+.hero__card-drag-label {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--white);
+  color: #000;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  padding: 4px 12px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ── Welcome text with editable input ── */
+.hero__welcome {
+  font-family: var(--font-display);
+  font-size: clamp(80px, 8vw, 120px);
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero__welcome-input {
+  background: transparent;
+  border: none;
+  /* border-bottom: 3px solid var(--accent); */
+  color: var(--accent);
+  font-family: var(--font-display);
+ font-size: clamp(80px, 8vw, 120px);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  outline: none;
+  text-align: center;
+  min-width: 200px;
+  padding: 8px 12px;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.hero__welcome-input:focus {
+  background: rgba(184, 255, 87, 0.05);
+  border-bottom-color: var(--accent);
+}
+
+.hero__welcome-input::placeholder {
+  color: rgba(184, 255, 87, 0.5);
+}
+
+.hero__name-andy {
+  font-family: var(--font-display);
+  font-size: clamp(100px, 14vw, 200px);
+  font-weight: 900;
+  line-height: 0.88;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  display: block;
+}
+
+.hero__name-reff {
+  font-family: var(--font-display);
+  font-size: clamp(100px, 14vw, 200px);
+  font-weight: 900;
+  line-height: 0.88;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--white);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  display: block;
+  margin-top: 4px;
+}
+
+/* ── Subtitle ── */
+.hero__subtitle {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.01em;
+}
+
+/* ── Scroll hint ── */
+.hero__scroll-hint {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--light-gray);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  animation: scrollPulse 2s ease infinite;
+}
+
+.hero__scroll-hint::after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--light-gray), transparent);
+}
+
+@keyframes scrollPulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateX(-50%) translateY(6px);
+  }
+}
+
+/* ============================================================
+   Responsive Media Queries
+   ============================================================ */
+
+/* Mobile: < 768px */
+@media (max-width: 767px) {
+  .hero {
+    padding: 80px 20px 60px;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .hero::before {
+    width: 300px;
+    height: 300px;
+    bottom: -50px;
+    right: -50px;
+  }
+
+  .hero__tagline {
+    font-size: 10px;
+    margin-bottom: 16px;
+  }
+
+  .hero__card {
+    padding: 20px 16px;
+  }
+
+  .hero__card-drag-label {
+    font-size: 9px;
+    padding: 3px 8px;
+  }
+
+  .hero__welcome {
+    font-size: clamp(40px, 10vw, 70px);
+    gap: 8px;
+  }
+
+  .hero__welcome-input {
+    font-size: clamp(40px, 10vw, 70px);
+    min-width: 120px;
+    padding: 4px 8px;
+  }
+
+  .hero__subtitle {
+    font-size: 14px;
+    margin-top: 24px;
+  }
+
+  .hero__scroll-hint {
+    display: none;
+  }
+}
+
+/* Tablet: 768px - 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero {
+    padding: 80px 40px 60px;
+  }
+
+  .hero::before {
+    width: 400px;
+    height: 400px;
+  }
+
+  .hero__tagline {
+    font-size: 10px;
+    margin-bottom: 18px;
+  }
+
+  .hero__card {
+    padding: 24px 40px;
+  }
+
+  .hero__welcome {
+    font-size: clamp(60px, 10vw, 100px);
+  }
+
+  .hero__welcome-input {
+    font-size: clamp(60px, 10vw, 100px);
+    min-width: 150px;
+  }
+
+  .hero__subtitle {
+    font-size: 16px;
+    margin-top: 32px;
+  }
+}
