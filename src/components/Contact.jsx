@@ -36,12 +36,12 @@ export default function Contact({ onEnter, onLeave }) {
             <li>
               <span className="contact__detail-label">Email</span>
               <a
-                href="mailto:hello@andyreff.com"
+                href="mailto:pankajvishwakarma8812@gmail.com"
                 className="contact__detail-value"
                 onMouseEnter={onEnter}
                 onMouseLeave={onLeave}
               >
-                hello@andyreff.com
+                pankajvishwakarma8812@gmail.com
               </a>
             </li>
             <li>

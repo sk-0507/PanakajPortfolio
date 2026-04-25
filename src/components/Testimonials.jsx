@@ -6,21 +6,21 @@ import '../styles/Testimonials.css';
 const TESTIMONIALS = [
   {
     id: 1,
-    quote: 'Andy completely transformed how we communicate our brand. The system he built is flexible enough to grow with us, but consistent enough that every touchpoint feels unmistakably ours.',
+    quote: 'Pankaj completely transformed how we communicate our brand. The system he built is flexible enough to grow with us, but consistent enough that every touchpoint feels unmistakably ours.',
     name: 'Sarah Chen',
     role: 'CEO, Meridian Studio',
     initial: 'SC',
   },
   {
     id: 2,
-    quote: 'Working with Andy felt less like hiring a designer and more like gaining a creative partner. He pushed back when our instincts were wrong and delivered work that exceeded what we thought was possible.',
+    quote: 'Working with Pankaj felt less like hiring a designer and more like gaining a creative partner. He pushed back when our instincts were wrong and delivered work that exceeded what we thought was possible.',
     name: 'Marcus Webb',
     role: 'Founder, Volta Platform',
     initial: 'MW',
   },
   {
     id: 3,
-    quote: 'The Noct editorial system Andy designed cut our layout time in half. It looks incredible and our team actually understands how to use it — that balance is rare.',
+    quote: 'The Noct editorial system Pankaj designed cut our layout time in half. It looks incredible and our team actually understands how to use it — that balance is rare.',
     name: 'Irina Sokolov',
     role: 'Creative Director, Noct Magazine',
     initial: 'IS',
