@@ -95,6 +95,7 @@
   min-width: 200px;
   padding: 8px 12px;
   transition: border-color 0.2s, background 0.2s;
+  caret-color: var(--accent);
 }
 
 .hero__welcome-input:focus {

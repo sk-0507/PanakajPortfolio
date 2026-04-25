@@ -1,5 +1,4 @@
 // src/components/Hero.jsx
-// Hero section with draggable/tiltable name card and scroll-based 3D perspective.
 
 import React, { useEffect, useRef, useState } from 'react';
 import { useDraggableCard } from '../hooks/useDraggableCard';
@@ -7,13 +6,20 @@ import '../styles/Hero.css';
 
 export default function Hero({ onCardEnter, onCardLeave }) {
   const heroRef = useRef(null);
+  const inputRef = useRef(null); // ← ADD THIS
   const { cardRef, onMouseDown, onDoubleClick, onMouseMove, onMouseLeave } =
     useDraggableCard();
   const [editableText, setEditableText] = useState('Billionare');
 
-  // Scroll-driven 3D tilt for the whole hero section
+  // Auto-focus input on mount so the blinking cursor appears immediately ← ADD THIS
   useEffect(() => {
-   
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, []);
+
+  // Scroll-driven 3D tilt (unchanged)
+  useEffect(() => {
     const handleScroll = () => {
       const hero = heroRef.current;
       if (!hero) return;
@@ -31,8 +37,6 @@ export default function Hero({ onCardEnter, onCardLeave }) {
 
   return (
     <section id="hero" className="hero" ref={heroRef}>
-       
-
       <div
         ref={cardRef}
         className="hero__card"
@@ -42,10 +46,10 @@ export default function Hero({ onCardEnter, onCardLeave }) {
         onMouseLeave={() => { onMouseLeave(); onCardLeave(); }}
         onMouseEnter={onCardEnter}
       >
-        
         <div className="hero__welcome">
           Welcome Future{' '}
           <input
+            ref={inputRef}          // ← ADD THIS
             type="text"
             className="hero__welcome-input"
             value={editableText}
@@ -56,7 +60,6 @@ export default function Hero({ onCardEnter, onCardLeave }) {
       </div>
 
       <p className="hero__subtitle">Precision structure, bold creative vision.</p>
-
       <div className="hero__scroll-hint">Scroll</div>
     </section>
   );
