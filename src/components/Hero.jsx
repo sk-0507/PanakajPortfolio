@@ -1,24 +1,26 @@
-// src/components/Hero.jsx
-
 import React, { useEffect, useRef, useState } from 'react';
 import { useDraggableCard } from '../hooks/useDraggableCard';
 import '../styles/Hero.css';
 
 export default function Hero({ onCardEnter, onCardLeave }) {
   const heroRef = useRef(null);
-  const inputRef = useRef(null); // ← ADD THIS
+  const inputRef = useRef(null);
+  const sizerRef = useRef(null);
   const { cardRef, onMouseDown, onDoubleClick, onMouseMove, onMouseLeave } =
     useDraggableCard();
-  const [editableText, setEditableText] = useState('Billionare');
+  const [editableText, setEditableText] = useState('');
 
-  // Auto-focus input on mount so the blinking cursor appears immediately ← ADD THIS
   useEffect(() => {
-    if (inputRef.current) {
-      inputRef.current.focus();
-    }
+    if (inputRef.current) inputRef.current.focus();
   }, []);
 
-  // Scroll-driven 3D tilt (unchanged)
+  // Sync input width to sizer span on every text change
+  useEffect(() => {
+    if (sizerRef.current && inputRef.current) {
+      inputRef.current.style.width = sizerRef.current.offsetWidth + 'px';
+    }
+  }, [editableText]);
+
   useEffect(() => {
     const handleScroll = () => {
       const hero = heroRef.current;
@@ -47,19 +49,29 @@ export default function Hero({ onCardEnter, onCardLeave }) {
         onMouseEnter={onCardEnter}
       >
         <div className="hero__welcome">
-          Welcome Future{' '}
+          Welcome, Future
+
+          {/* Hidden sizer — mirrors input text pixel-perfectly */}
+          <span
+            ref={sizerRef}
+            className="hero__welcome-sizer"
+            aria-hidden="true"
+          >
+            {editableText || 'Billionaire'}
+          </span>
+
           <input
-            ref={inputRef}          // ← ADD THIS
+            ref={inputRef}
             type="text"
             className="hero__welcome-input"
             value={editableText}
             onChange={(e) => setEditableText(e.target.value)}
-            placeholder="Billionare"
+            placeholder="Billionaire"
           />
         </div>
       </div>
 
-      <p className="hero__subtitle">Precision structure, bold creative vision.</p>
+      <p className="hero__subtitle">Purposeful strokes, unforgettable frames.</p>
       <div className="hero__scroll-hint">Scroll</div>
     </section>
   );

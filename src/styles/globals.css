@@ -4,7 +4,7 @@
    ============================================================ */
 
 /* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Quicksand:wght@400;500;600;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Quicksand:wght@400;500;600;700&display=swap'); */
 
 *,
 *::before,
@@ -16,21 +16,22 @@
 
 :root {
   /* Primary Colors */
-  --black: #0C0C0C;
-  --white: #F5F4F0;
+  --black: #0c0c0c; /* Background = Studio Black */
+  --white: #F5F4F0; /* Foreground = Off-White */
   
   /* Secondary Colors */
   --gray: #888884;
-  --light-gray: #888884;
-  --charge-green: #B8FF57;
+  --light-gray: #F5F4F0;
+  --charge-green: #ff2b2b; 
   
   /* Accents & Special */
-  --accent: #B8FF57;
+  --accent: #ff2b2b; /* Accent colour = Vivid red */
   --border: rgba(255, 255, 255, 0.12);
-
-  --font-display: 'Wix Madefor Display', 'Playfair Display', serif;
-  --font-body: 'Playfair Display', serif;
-  --font-nav: 'Quicksand', sans-serif;
+  --shadow: rgba(255, 43, 43, 0.85);
+  --font-display: 'Syne Medium';
+  --font-body: 'Playfair Display';
+  --font-nav: 'Familjen Grotesk';
+  --text-transform: capitalize; /* Default text-transform for headings and buttons */
 }
 
 html {

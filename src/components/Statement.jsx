@@ -22,8 +22,8 @@ export default function Statement() {
         ref={textRef}
         className={`statement__text${textVisible ? ' statement__text--visible' : ''}`}
       >
-        I design for those who crave <em>clarity</em> without sacrificing{' '}
-        <em>energy.</em>
+        <em>Your vision. Our creativity.</em> Designs that exceed expectations.{' '}
+        
       </p>
     </section>
   );

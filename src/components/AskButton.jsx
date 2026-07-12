@@ -67,8 +67,8 @@ export default function AskButton({ onEnter, onLeave }) {
         onMouseLeave={onLeave}
       >
         <span className="ask-btn__icon"></span>
-        Ask my work
-        <span className="ask-btn__shortcut">⌘K</span>
+        Let’s talk
+        <span className="ask-btn__shortcut">@</span>
       </button>
 
       {/* ── Mute / Unmute ── */}

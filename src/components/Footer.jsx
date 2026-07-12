@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="footer">
       <span className="footer__logo">Pankaj Vishwakarma</span>
       <span>Mumbai, IND — © 2026</span>
-      <span>Precision structure, bold creative vision.</span>
+      <span>Purposeful strokes, unforgettable frames.</span>
     </footer>
   );
 }

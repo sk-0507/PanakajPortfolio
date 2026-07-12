@@ -22,10 +22,10 @@
 
 .navbar__logo {
   font-family: var(--font-nav);
-  font-weight: 800;
+  font-weight: 200;
   font-size: 13px;
   letter-spacing: 0.05em;
-  text-transform: uppercase;
+  text-transform: var(--text-transform);
   color: var(--white);
   z-index: 102;
   position: relative;
@@ -37,7 +37,7 @@
 
 .navbar__clock {
   font-size: 12px;
-  font-weight: 400;
+  font-weight: 200;
   color: var(--light-gray);
   letter-spacing: 0.03em;
   font-variant-numeric: tabular-nums;
@@ -51,16 +51,19 @@
 
 .navbar__links a {
   font-family: var(--font-nav);
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 200;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
+  text-transform: var(--text-transform);
   color: var(--white);
-  transition: color 0.2s;
+  display: inline-block;
+  transition: color 0.4s, transform 0.4s ease;
 }
 
 .navbar__links a:hover {
   color: var(--white);
+  transform: scale(1.15);
+  text-shadow: 0 0 12px var(--white), 0 0 24px var(--white);
 }
 
 /* ── Hamburger Menu ── */
@@ -138,9 +141,9 @@
   padding: 14px 20px;
   font-family: var(--font-nav);
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 200;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
+  text-transform: var(--text-transform);
   color: var(--white);
   transition: background 0.2s, color 0.2s;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);

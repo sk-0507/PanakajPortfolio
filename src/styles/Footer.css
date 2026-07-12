@@ -17,7 +17,7 @@
   font-weight: 800;
   font-size: 13px;
   color: var(--white);
-  text-transform: uppercase;
+  text-transform: var(--text-transform);
   letter-spacing: 0.08em;
 }
 
@@ -30,7 +30,7 @@
   bottom: 32px;
   right: 32px;
   background: var(--accent);
-  color: #000;
+  color: var(--light-gray);
   border: none;
   border-radius: 100px;
   padding: 14px 24px;
@@ -44,11 +44,11 @@
   cursor: pointer;
   z-index: 200;
   transition: box-shadow 0.2s ease;
-  box-shadow: 0 0 30px rgba(184, 255, 87, 0.3);
+  box-shadow: 0 0 30px var(--shadow);
 }
 
 .ask-btn:hover {
-  box-shadow: 0 0 40px rgba(184, 255, 87, 0.5);
+  box-shadow: 0 0 40px var(--shadow);
 }
 
 .ask-btn__icon {
@@ -139,7 +139,7 @@
 .mute-btn__label {
   font-size: 12px;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
+  text-transform: var(--text-transform);
 }
 
 /* ============================================================

@@ -1,0 +1,50 @@
+/* ============================================================
+   src/styles/BackgroundGradient.css
+   Fixed, full-viewport ambient background layer.
+   Sits behind every section — mount <BackgroundGradient /> once,
+   as the first thing rendered in App.
+   ============================================================ */
+
+.bg-gradient {
+  position: fixed;
+  inset: 0;
+  z-index: -1;      /* behind all normal-flow content */
+  overflow: hidden;
+  pointer-events: none;
+  background: var(--black);
+}
+
+/* Each blob is centered at (left, top) via translate(-50%, -50%),
+   then JS layers a second translate3d() for the live animation and
+   a scale() for the ambient "breathing" — see BackgroundGradient.jsx. */
+.bg-gradient__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(110px);
+  will-change: transform;
+  transform: translate(-50%, -50%);
+}
+
+/* Grain overlay on top of the gradient — same technique as the
+   existing body::before noise, but kept local to this layer so it
+   reads as part of the background instead of the whole page. */
+.bg-gradient__grain {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+  background-size: 200px;
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+}
+
+@media (max-width: 767px) {
+  .bg-gradient__blob {
+    filter: blur(70px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-gradient__blob {
+    filter: blur(120px);
+  }
+}

@@ -6,32 +6,26 @@ import '../styles/Testimonials.css';
 const TESTIMONIALS = [
   {
     id: 1,
-    quote: 'Pankaj completely transformed how we communicate our brand. The system he built is flexible enough to grow with us, but consistent enough that every touchpoint feels unmistakably ours.',
-    name: 'Sarah Chen',
-    role: 'CEO, Meridian Studio',
-    initial: 'SC',
+    quote: "Working with Pankaj for almost two years has been a great experience. His design strategy, creativity and impressive designs have significantly elevated our brand's social media presence. He understands brand aesthetics very well and delivers with professionalism, and is always open to feedback. I highly recommend him to anyone looking for a talented and reliable designer.",
+    name: 'Hetvi Acharya',
+    role: 'Marketing Head, Universal Cosmetics Industries',
+    initial: 'HA',
   },
   {
     id: 2,
-    quote: 'Working with Pankaj felt less like hiring a designer and more like gaining a creative partner. He pushed back when our instincts were wrong and delivered work that exceeded what we thought was possible.',
-    name: 'Marcus Webb',
-    role: 'Founder, Volta Platform',
-    initial: 'MW',
+    quote: 'Pankaj has consistently displayed professionalism, creativity, and a strong work ethic. We found him to be highly dedicated and reliable in all responsibilities entrusted.',
+    name: 'Ruddhi Merchant',
+    role: 'Founder & CD, Studio Seesaw',
+    initial: 'RM',
   },
   {
     id: 3,
-    quote: 'The Noct editorial system Pankaj designed cut our layout time in half. It looks incredible and our team actually understands how to use it — that balance is rare.',
-    name: 'Irina Sokolov',
-    role: 'Creative Director, Noct Magazine',
+    quote: 'Pankaj understands what we actually need. He brings fresh ideas, pays attention to details, and always tries to create something that connects with our audience. It’s been great having him as our creative partner.',
+    name: 'Lorem Ipsum',
+    role: 'Owner, New National Jewellers',
     initial: 'IS',
-  },
-  {
-    id: 4,
-    quote: 'Precision is the word. Every decision had a reason, every component had a purpose. The dashboard he designed has become the gold standard our engineering team references.',
-    name: 'James Okafor',
-    role: 'Head of Product, Pulse',
-    initial: 'JO',
-  },
+  }
+  
 ];
 
 export default function Testimonials() {

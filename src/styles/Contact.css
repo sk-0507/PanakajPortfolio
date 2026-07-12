@@ -19,16 +19,16 @@
 .contact__title {
   font-family: var(--font-display);
   font-size: 56px;
-  font-weight: 900;
-  text-transform: uppercase;
+  font-weight: 200;
+  text-transform: var(--text-transform);
   letter-spacing: -0.01em;
 }
 
 .contact__sub {
-  font-size: 13px;
-  color: var(--light-gray);
-  font-weight: 400;
-  letter-spacing: 0.05em;
+    font-size: 17px;
+    color: var(--gray);
+    font-weight: 200;
+    font-family: var(--font-body);
 }
 
 /* ── Two-column body ── */
@@ -42,9 +42,9 @@
 /* ── Left info panel ── */
 .contact__tagline {
   font-size: clamp(28px, 3.5vw, 48px);
-  font-weight: 500;
+  font-weight: 200;
   line-height: 1.2;
-  margin-bottom: 56px;
+  margin-bottom: 0;
   color: var(--white);
 }
 
@@ -72,14 +72,14 @@
 .contact__detail-label {
   font-size: 12px;
   color: var(--light-gray);
-  text-transform: uppercase;
+  text-transform: var(--text-transform);
   letter-spacing: 0.1em;
-  font-weight: 600;
+  font-weight: 200;
 }
 
 .contact__detail-value {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 200;
   color: var(--white);
   transition: color 0.2s;
 }
@@ -124,9 +124,9 @@ a.contact__detail-value:hover {
 
 .contact__field label {
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 200;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
+  text-transform: var(--text-transform);
   color: var(--light-gray);
 }
 
@@ -152,7 +152,7 @@ a.contact__detail-value:hover {
 
 .contact__field input:focus,
 .contact__field textarea:focus {
-  border-color: rgba(184, 255, 87, 0.5);
+  border-color: rgba(255, 43, 43, 0.5);
   background: rgba(255, 255, 255, 0.06);
 }
 
@@ -163,22 +163,22 @@ a.contact__detail-value:hover {
   align-items: center;
   gap: 12px;
   background: var(--accent);
-  color: #000;
+  color: var(--light-gray);
   border: none;
   border-radius: 100px;
   padding: 16px 32px;
   font-family: var(--font-body);
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 00;
   letter-spacing: 0.03em;
   cursor: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 0 24px rgba(184, 255, 87, 0.25);
+  box-shadow: 0 0 24px  var(--shadow);
 }
 
 .contact__submit:hover {
   transform: scale(1.04);
-  box-shadow: 0 0 36px rgba(184, 255, 87, 0.45);
+  box-shadow: 0 0 36px var(--shadow);
 }
 
 .contact__submit-arrow {
@@ -341,4 +341,5 @@ a.contact__detail-value:hover {
     padding: 15px 30px;
     font-size: 14px;
   }
+ 
 }

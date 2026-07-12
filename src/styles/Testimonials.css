@@ -19,15 +19,15 @@
 .testimonials__title {
   font-family: var(--font-display);
   font-size: 56px;
-  font-weight: 900;
-  text-transform: uppercase;
+  font-weight: 200;
+  text-transform:  var(--text-transform);
   letter-spacing: -0.01em;
 }
 
 .testimonials__sub {
   font-size: 13px;
   color: var(--light-gray);
-  font-weight: 400;
+  font-weight: 200;
   letter-spacing: 0.05em;
 }
 
@@ -44,18 +44,18 @@
 .testimonials__quote-mark {
   font-family: var(--font-display);
   font-size: 160px;
-  font-weight: 900;
+  font-weight: 200;
   line-height: 0.6;
   color: var(--accent);
-  opacity: 0.15;
+  opacity: 0.25;
   display: block;
   margin-bottom: -20px;
   user-select: none;
 }
 
 .testimonials__blockquote {
-  font-size: clamp(18px, 2.2vw, 26px);
-  font-weight: 400;
+  font-size: clamp(12px, 2.vw, 18px);
+  font-weight: 200;
   line-height: 1.6;
   color: var(--white);
   margin-bottom: 48px;
@@ -81,7 +81,7 @@
   height: 48px;
   border-radius: 50%;
   background: var(--accent);
-  color: #000;
+  color: var(--light-gray);
   font-size: 14px;
   font-weight: 800;
   display: flex;
@@ -100,7 +100,7 @@
 
 .testimonials__name {
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 200;
   color: var(--white);
   letter-spacing: 0.02em;
 }
@@ -137,7 +137,7 @@
 .testimonials__btn:hover {
   border-color: var(--accent);
   background: var(--accent);
-  color: #000;
+  color: var(--light-gray);
 }
 
 .testimonials__dots {

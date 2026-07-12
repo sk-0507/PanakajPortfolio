@@ -14,7 +14,7 @@ export default function Navbar({ onLinkEnter, onLinkLeave }) {
   const navLinks = [
     { href: '#work', label: 'Work' },
     { href: '#services', label: 'Services' },
-    { href: '#process', label: 'Process' },
+    // { href: '#process', label: 'Process' },
     { href: '#testimonials', label: 'Clients' },
     { href: '#contact', label: 'Contact' },
     { href: '#about', label: 'About' },
@@ -28,7 +28,7 @@ export default function Navbar({ onLinkEnter, onLinkLeave }) {
     <nav className={`navbar${isVisible ? '' : ' navbar--hidden'}`}>
       <span className="navbar__logo">
         <a href='#hero' onClick={handleLinkClick} onMouseEnter={onLinkEnter} onMouseLeave={onLinkLeave}>
-          StrokeFrames
+          <img src="/Assets/Image/Logo.png" alt="InkFrame" srcset="" style={{ width: "150px", height: "auto" }}/>
         </a>
       </span>
 

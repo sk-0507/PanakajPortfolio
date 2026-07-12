@@ -6,28 +6,34 @@ import '../styles/Services.css';
 const SERVICES = [
   {
     num: '01',
-    title: 'Brand Identity',
-    desc: 'From strategy to final assets — logos, typography, color systems, and brand guidelines that give your company a clear, ownable visual language.',
-    tags: ['Logo Design', 'Brand Strategy', 'Style Guides', 'Asset Production'],
+    title: 'Digital Design & Social Media',
+    desc: 'Scroll-stopping visuals that connect brands with their audience.',
+    tags: ['Social Media Creatives', 'Campaign Creatives', 'Digital Advertisements', 'Web Banners'],
   },
   {
     num: '02',
-    title: 'UI / UX Design',
-    desc: 'Interfaces that are precise, fast, and intuitive. I design for real users — mapping flows, wireframing structure, and delivering pixel-perfect screens.',
-    tags: ['Web Design', 'Mobile Apps', 'Wireframing', 'Prototyping'],
+    title: 'Motion & Visual Storytelling',
+    desc: 'Bringing stories to life through impactful motion, editing, and visual experiences.',
+    tags: ['Video Editing', 'AI-Generated Videos', 'Promotional Videos', 'Reels & Shorts'],
   },
   {
     num: '03',
-    title: 'Art Direction',
-    desc: 'Visual storytelling across campaigns, editorial layouts, and digital touchpoints. Coherent, bold, and always on-brand.',
-    tags: ['Campaign Direction', 'Editorial Design', 'Photography', 'Content Systems'],
+    title: '3D & Product Visualization',
+    desc: 'Bringing products and ideas to life with immersive visuals.',
+    tags: ['3D Product Renders', 'CGI Visuals ', 'Product Animations'],
   },
   {
     num: '04',
-    title: 'Design Systems',
-    desc: 'Scalable component libraries and token architectures that keep teams aligned and products consistent — from Figma to production code.',
-    tags: ['Component Libraries', 'Design Tokens', 'Figma Systems', 'Documentation'],
+    title: 'E-commerce Creative Solutions',
+    desc: 'Visuals that help products stand out and sell better.',
+    tags: ['Marketplace Listing Images', 'A+ Content', 'Lifestyle Images'],
   },
+   {
+    num: '05',
+    title: 'Print & Editorial Design',
+    desc: 'Creating impactful physical brand experiences.',
+    tags: ['Brochures', 'Magazines','Menus', 'Posters', 'Business Collaterals'],
+  }
 ];
 
 export default function Services({ onEnter, onLeave }) {
@@ -37,7 +43,7 @@ export default function Services({ onEnter, onLeave }) {
     <section id="services" className="services">
       <div className="services__header">
         <h2 className="services__title">Services</h2>
-        <p className="services__sub">What I bring to the table</p>
+        <p className="services__sub">What we bring to the table</p>
       </div>
 
       <div className="services__list">

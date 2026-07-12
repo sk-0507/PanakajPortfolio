@@ -21,7 +21,7 @@
   right: -100px;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(184, 255, 87, 0.04) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 43, 43, 0.04) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -29,10 +29,10 @@
 .hero__tagline {
   font-size: 11px;
   letter-spacing: 0.25em;
-  text-transform: uppercase;
+  text-transform: var(--text-transform);
   color: var(--light-gray);
   margin-bottom: 20px;
-  font-weight: 500;
+  font-weight: 200;
   text-align: center;
 }
 
@@ -59,73 +59,81 @@
   background: var(--white);
   color: #000;
   font-size: 10px;
-  font-weight: 700;
+  font-weight: 200;
   letter-spacing: 0.15em;
   padding: 4px 12px;
-  text-transform: uppercase;
+  text-transform: var(--text-transform);
   white-space: nowrap;
 }
 
-/* ── Welcome text with editable input ── */
 .hero__welcome {
   font-family: var(--font-display);
-  font-size: clamp(80px, 8vw, 120px);
-  font-weight: 900;
+  font-size: clamp(50px, 4vw, 90px);
+  font-weight: 200;
   line-height: 1.1;
   color: var(--white);
   letter-spacing: -0.02em;
   display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
+  gap: 4px;          /* was 12px */
+  width: 100%;
+  text-align: center;
 }
 
 .hero__welcome-input {
+  /* width is set dynamically by JS — no width/min-width here */
   background: transparent;
   border: none;
-  /* border-bottom: 3px solid var(--accent); */
   color: var(--accent);
   font-family: var(--font-display);
- font-size: clamp(80px, 8vw, 120px);
-  font-weight: 900;
+  font-size: inherit;
+  font-weight: inherit;
+  /* font-style: italic; */
   letter-spacing: -0.02em;
   outline: none;
-  text-align: center;
-  min-width: 200px;
-  padding: 8px 12px;
+  text-align: left;
+  padding: 8px 2px;
   transition: border-color 0.2s, background 0.2s;
   caret-color: var(--accent);
 }
 
-.hero__welcome-input:focus {
-  background: rgba(184, 255, 87, 0.05);
-  border-bottom-color: var(--accent);
-}
-
 .hero__welcome-input::placeholder {
-  color: rgba(184, 255, 87, 0.5);
+  color: rgba(255, 43, 43, 0.4);
 }
-
-.hero__name-andy {
+.hero__welcome-sizer {
+  position: absolute;
+  visibility: hidden;
+  white-space: pre;
+  pointer-events: none;
+  font-family: var(--font-display);
+  font-size: inherit;
+  font-weight: inherit;  
+  /* font-style: italic; */
+  letter-spacing: -0.02em;
+  padding: 8px 2px; /* must match input padding exactly */
+}
+.hero__name-Pankaj {
   font-family: var(--font-display);
   font-size: clamp(100px, 14vw, 200px);
-  font-weight: 900;
+  font-weight: 200;
   line-height: 0.88;
   color: var(--white);
-  text-transform: uppercase;
+  text-transform: var(--text-transform);
   letter-spacing: -0.02em;
   display: block;
 }
 
-.hero__name-reff {
+.hero__name-Vishwakarma {
   font-family: var(--font-display);
   font-size: clamp(100px, 14vw, 200px);
-  font-weight: 900;
+  font-weight: 200;
   line-height: 0.88;
   color: transparent;
   -webkit-text-stroke: 2px var(--white);
-  text-transform: uppercase;
+  text-transform: var(--text-transform);
   letter-spacing: -0.02em;
   display: block;
   margin-top: 4px;
@@ -136,7 +144,7 @@
   text-align: center;
   margin-top: 40px;
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 200;
   color: rgba(255, 255, 255, 0.6);
   letter-spacing: 0.01em;
 }
@@ -149,7 +157,7 @@
   transform: translateX(-50%);
   font-size: 11px;
   letter-spacing: 0.2em;
-  text-transform: uppercase;
+  text-transform:   var(--text-transform);
   color: var(--light-gray);
   display: flex;
   flex-direction: column;

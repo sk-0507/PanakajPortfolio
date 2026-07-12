@@ -20,7 +20,7 @@
   font-family: var(--font-display);
   font-size: 56px;
   font-weight: 900;
-  text-transform: uppercase;
+  text-transform:  var(--text-transform);
   letter-spacing: -0.01em;
 }
 
@@ -106,7 +106,7 @@
   font-family: var(--font-display);
   font-size: 32px;
   font-weight: 800;
-  text-transform: uppercase;
+  text-transform:  var(--text-transform);
   letter-spacing: -0.01em;
   margin-bottom: 12px;
   color: var(--white);

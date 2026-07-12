@@ -19,8 +19,8 @@
 .services__title {
   font-family: var(--font-display);
   font-size: 56px;
-  font-weight: 900;
-  text-transform: uppercase;
+  font-weight: 200;
+  text-transform:  var(--text-transform);
   letter-spacing: -0.01em;
 }
 
@@ -45,20 +45,20 @@
 
 .service-item:hover,
 .service-item--open {
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--black);
 }
 
 .service-item__row {
   display: flex;
   align-items: center;
   gap: 24px;
-  padding: 28px 0;
+  padding: 28px 0 0;
   cursor: none;
 }
 
 .service-item__num {
   font-size: 12px;
-  color: var(--accent);
+  color: var(--gray);
   font-weight: 700;
   letter-spacing: 0.1em;
   min-width: 28px;
@@ -67,27 +67,27 @@
 .service-item__title {
   font-family: var(--font-display);
   font-size: 36px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: -0.01em;
+  font-weight: 200;
+  text-transform:  var(--text-transform);  ;
+  letter-spacing: 0em;
   flex: 1;
   transition: color 0.2s;
 }
 
 .service-item:hover .service-item__title,
 .service-item--open .service-item__title {
-  color: var(--accent);
+  color: var(--light-gray);
 }
 
 .service-item__arrow {
   font-size: 22px;
-  color: var(--light-gray);
+  color: var(--accent);
   transition: transform 0.3s ease, color 0.2s;
 }
 
 .service-item--open .service-item__arrow {
   transform: rotate(45deg);
-  color: var(--accent);
+  color: var(--light-gray);
 }
 
 /* ── Expandable body ── */
@@ -124,19 +124,20 @@
 
 .service-item__tag {
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 200;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
+  text-transform:  var(--text-transform);
   padding: 5px 12px;
   border: 1px solid var(--border);
   border-radius: 100px;
   color: var(--light-gray);
   transition: border-color 0.2s, color 0.2s;
+  font-family: var(--font-nav);
 }
 
 .service-item--open .service-item__tag {
-  border-color: rgba(184, 255, 87, 0.3);
-  color: var(--accent);
+  border-color:  var(--gray);
+  color: var(--light-gray);
 }
 
 /* ============================================================

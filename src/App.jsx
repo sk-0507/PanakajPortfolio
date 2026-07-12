@@ -18,12 +18,14 @@ import Contact      from './components/Contact';
 import About        from './components/About';
 import Footer       from './components/Footer';
 import AskButton    from './components/AskButton';
+import BackgroundGradient from './components/Backgroundgradient.jsx';
 
 export default function App() {
   const { pos, isLarge, enlargeCursor, shrinkCursor } = useCursor();
 
   return (
     <>
+      <BackgroundGradient/>
       {/* Page loader on initial load */}
       <Loader />
 
@@ -55,7 +57,7 @@ export default function App() {
           onLeave={shrinkCursor}
         />
 
-        <OurProcess />
+        {/* <OurProcess /> */}
 
         <Testimonials />
          <About />
