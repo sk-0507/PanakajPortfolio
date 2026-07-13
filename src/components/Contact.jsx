@@ -21,7 +21,7 @@ export default function Contact({ onEnter, onLeave }) {
     <section id="contact" className="contact">
       <div className="contact__header">
         <h2 className="contact__title">Contact</h2>
-        <p className="contact__sub">Let's build something extraordinary</p>
+        <p className="contact__sub">Enough about me, now it's your turn.</p>
       </div>
 
       <div className="contact__body">

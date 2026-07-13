@@ -13,17 +13,17 @@ export default function About() {
         <div className="about__block about__text about__text--one">
           <h2 className="about__title">About</h2>
           <p className="about__bio">
-           <strong>InkFrame</strong>, is a <strong>multidisciplinary creative agency</strong> based in <strong>India</strong>, bringing together designers, artists, and <strong>creative thinkers</strong> who specialize in delivering <strong>end-to-end visual solutions</strong> tailored to your unique vision. 
+           <strong>InkFrame</strong>, is a <strong>multidisciplinary creative agency</strong> <br />based in <strong>India</strong>, bringing together designers, artists, <br />and <strong>creative thinkers</strong> who specialize in delivering <br /><strong>end-to-end visual solutions</strong> tailored to your unique vision. 
            <br />From graphics to motion and 3D visuals, we bring creativity and innovation together under one roof.
             <br />
             <br />
-            InkFrame was built on the belief that great design is more than just attractive visuals. <br />It should <strong>communicate clearly, solve real challenges,</strong> and give brands a distinct identity that people remember.
+            InkFrame was built on the belief that great design is more than just attractive visuals. <br />It should <strong>communicate clearly, solve real challenges,</strong> <br />and give brands a distinct identity that people remember.
           </p>
         </div>
 
         {/* Top-right — image */}
         <div className="about__block about__image about__image--one">
-          <span>image1</span>
+          <img src="/Assets/Image/About.png" alt="About" style={{ width: "100%", height: "auto" }}/>
         </div>
 
       </div>
@@ -47,11 +47,11 @@ export default function About() {
             <br />
             <br />
             One question guides every project I take on: <strong>"Does this solve the brand's problem?"</strong>{' '}
-             <br />That mindset shapes every decision I make. I believe great design is built through storytelling, attention to detail, emotion, and precision. It's not just about creating visually appealing work—it's about crafting experiences <br />that connect with people, build trust, and deliver real value.
+             <br />That mindset shapes every decision I make. I believe great design is built through storytelling, attention to detail, <br />emotion, and precision. It's not just about creating visually appealing work—it's about crafting experiences <br />that connect with people, build trust, and deliver real value.
              
             <br />
             <br />
-            Having worked with creative agencies and collaborated with brands across <strong>diverse industries,</strong> <br />Every collaboration is driven by creativity, strategy, and precision, with one goal in mind: creating work that is not only beautiful but also <strong>meaningful, memorable, and effective.</strong> 
+            Having worked with creative agencies and collaborated with brands across <strong>diverse industries,</strong> <br />Every collaboration is driven by creativity, strategy, and precision, with one goal in mind: creating work <br />that is not only beautiful but also <strong>meaningful, memorable, and effective.</strong> 
             <br />
             <br />
             I’m building InkFrame with a simple vision: <strong>to grow alongside the people and brands I work with.</strong>

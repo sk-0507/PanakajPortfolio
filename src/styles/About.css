@@ -3,17 +3,18 @@
    ============================================================ */
 
 .about {
-  padding: 40px 40px;
+  padding: 100px 40px;
+  padding-top: 40px;
   border-top: 1px solid var(--border);
 }
 
 .about__grid__top {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 2fr;
   grid-template-areas:
     "text1  image1"
     "image2 text2";
-  gap: 150px 80px;
+  gap: 80px 80px;
   align-items: right;
 }
 .about__grid__bottom {
@@ -22,7 +23,7 @@
   grid-template-areas:
     "text1  image1"
     "image2 text2";
-  gap: 150px 80px;
+  gap: 80px 80px;
   align-items: right;
 }
 .about__text--one  { grid-area: text1; }
@@ -55,7 +56,18 @@
 }
 
 /* ── Image placeholders ── */
-.about__image {
+.about__image__top {
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  background: var(--white);
+  color: #0c0c0c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.about__image__bottom {
   aspect-ratio: 3 / 4;
   width: 100%;
   background: var(--white);
@@ -66,7 +78,6 @@
   border-radius: 4px;
   overflow: hidden;
 }
-
 .about__image span {
   font-family: var(--font-display);
   font-size: clamp(24px, 3vw, 40px);

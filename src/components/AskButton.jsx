@@ -13,7 +13,7 @@ export default function AskButton({ onEnter, onLeave }) {
     // ✅ Root-relative path — file must live at: public/audio/music.mp3 
     const audio = new Audio('/audio/music.mp3');
     audio.loop = true;
-    audio.volume = 0.2;
+    audio.volume = 0.7;
     audioRef.current = audio;
 
     // Browsers block autoplay before any user gesture.
