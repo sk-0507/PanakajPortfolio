@@ -13,9 +13,10 @@
 }
 
 .statement__number {
+  font-family: var(--font-nav);
   font-size: 16px;
   font-weight: 200;
-  color: var(--li);
+  color: var(--light-gray);
   letter-spacing: 0.1em;
   margin-bottom: 48px;
   font-variant-numeric: tabular-nums;
@@ -38,11 +39,11 @@
   opacity: 0;
   transform: translateY(30px);
 }.statement__text {
-  transition: color 0.4s, transform 0.4s ease, text-shadow 0.4s ease;
+  transition: color 0.3s, transform 0.3s ease, text-shadow 0.3s ease;
 }
 
 .statement__text:hover {
-  transform: scale(1.1);
+  transform: scale(1.03);
 }
 
 .statement__text--visible {

@@ -48,7 +48,7 @@
   background: linear-gradient(
     180deg,
     var(--black) 0%,
-    rgba(184, 255, 87, 0.03) 50%,
+    rgba(255, 43, 43, 0.03) 50%,
     var(--black) 100%
   );
   opacity: 0.5;
@@ -83,7 +83,7 @@
   height: 12px;
   border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 15px rgba(184, 255, 87, 0.6);
+  box-shadow: 0 0 15px rgba(255, 43, 43, 0.6);
   animation: dotBounceAnimation 1.4s infinite ease-in-out;
 }
 
@@ -111,12 +111,12 @@
   0%, 100% {
     transform: translateY(0);
     opacity: 0.6;
-    box-shadow: 0 0 15px rgba(184, 255, 87, 0.6);
+    box-shadow: 0 0 15px rgba(255, 43, 43, 0.6);
   }
   50% {
     transform: translateY(-20px);
     opacity: 1;
-    box-shadow: 0 0 25px rgba(184, 255, 87, 0.9);
+    box-shadow: 0 0 25px rgba(255, 43, 43, 0.6);
   }
 }
 

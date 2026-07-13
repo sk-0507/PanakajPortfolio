@@ -13,10 +13,11 @@ export default function About() {
         <div className="about__block about__text about__text--one">
           <h2 className="about__title">About</h2>
           <p className="about__bio">
-           <strong>InkFrame</strong>, is a <strong>multidisciplinary creative agency</strong> based in <strong>India</strong>, bringing together designers, artists, and <strong>creative thinkers</strong> who specialize in delivering <strong>end-to-end visual solutions</strong> tailored to your unique vision. From graphics to motion and 3D visuals, we bring creativity and innovation together under one roof.
+           <strong>InkFrame</strong>, is a <strong>multidisciplinary creative agency</strong> based in <strong>India</strong>, bringing together designers, artists, and <strong>creative thinkers</strong> who specialize in delivering <strong>end-to-end visual solutions</strong> tailored to your unique vision. 
+           <br />From graphics to motion and 3D visuals, we bring creativity and innovation together under one roof.
             <br />
             <br />
-            InkFrame was built on the belief that great design is more than just attractive visuals. It should <strong>communicate clearly, solve real challenges,</strong> and give brands a distinct identity that people remember.
+            InkFrame was built on the belief that great design is more than just attractive visuals. <br />It should <strong>communicate clearly, solve real challenges,</strong> and give brands a distinct identity that people remember.
           </p>
         </div>
 
@@ -42,22 +43,18 @@ export default function About() {
             <strong>Hi, I'm Pankaj Vishwakarma, the Founder & Creative Head of InkFrame,</strong>{' '}
             <br />
             <br />
-            My journey began with <strong>sketching,</strong> driven by <strong>curiosity</strong> and a passion for turning ideas into meaningful visuals. Over the years, that passion has evolved into creating social campaigns, motion graphics, 3D visuals, and many more  experiences that don't just look good—they <strong>communicate with purpose.</strong>
+            My journey began with <strong>sketching,</strong> driven by <strong>curiosity</strong> and a passion for turning ideas into meaningful visuals. <br />Over the years, that passion has evolved into creating social campaigns, motion graphics, 3D visuals, <br />and many more  experiences that don't just look good—they <strong>communicate with purpose.</strong>
             <br />
             <br />
             One question guides every project I take on: <strong>"Does this solve the brand's problem?"</strong>{' '}
-            <strong>structure and energy</strong>. I believe the best design makes
-            you feel something before you understand it.
+             <br />That mindset shapes every decision I make. I believe great design is built through storytelling, attention to detail, emotion, and precision. It's not just about creating visually appealing work—it's about crafting experiences <br />that connect with people, build trust, and deliver real value.
+             
             <br />
             <br />
-            That mindset shapes every decision I make. I believe great design is built through storytelling, attention to detail, emotion, and precision. It's not just about creating visually appealing work—it's about crafting experiences that connect with people, build trust, and deliver real value.
+            Having worked with creative agencies and collaborated with brands across <strong>diverse industries,</strong> <br />Every collaboration is driven by creativity, strategy, and precision, with one goal in mind: creating work that is not only beautiful but also <strong>meaningful, memorable, and effective.</strong> 
             <br />
             <br />
-            <strong>I’m building InkFrame with a simple vision:</strong> to help brands communicate through thoughtful design, impactful visual storytelling and strategic brand positioning that creates a <strong>lasting impression for decades.</strong>
-            <br />
-            <br />
-            Having worked with creative agencies and collaborated with brands across <strong>diverse industries,</strong> Every collaboration is driven by creativity, strategy, and precision, with one goal in mind: creating work that is not only beautiful but also <strong>meaningful, memorable, and effective.</strong> 
-
+            I’m building InkFrame with a simple vision: <strong>to grow alongside the people and brands I work with.</strong>
           </p>
         </div>
 

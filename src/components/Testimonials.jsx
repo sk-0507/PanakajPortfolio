@@ -21,9 +21,9 @@ const TESTIMONIALS = [
   {
     id: 3,
     quote: 'Pankaj understands what we actually need. He brings fresh ideas, pays attention to details, and always tries to create something that connects with our audience. It’s been great having him as our creative partner.',
-    name: 'Lorem Ipsum',
+    name: 'Nilesh Singh',
     role: 'Owner, New National Jewellers',
-    initial: 'IS',
+    initial: 'NS',
   }
   
 ];

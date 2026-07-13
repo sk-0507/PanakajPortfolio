@@ -50,7 +50,7 @@
 }
 
 .navbar__links a {
-  font-family: var(--font-nav);
+  font-family: var(--font-display);
   font-size: 18px;
   font-weight: 200;
   letter-spacing: 0.08em;
@@ -63,7 +63,7 @@
 .navbar__links a:hover {
   color: var(--white);
   transform: scale(1.15);
-  text-shadow: 0 0 12px var(--white), 0 0 24px var(--white);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 1);
 }
 
 /* ── Hamburger Menu ── */
