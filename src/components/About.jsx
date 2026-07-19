@@ -14,10 +14,10 @@ export default function About() {
           <h2 className="about__title">About</h2>
           <p className="about__bio">
            <strong>InkFrame</strong>, is a <strong>multidisciplinary creative agency</strong> <br />based in <strong>India</strong>, bringing together designers, artists, <br />and <strong>creative thinkers</strong> who specialize in delivering <br /><strong>end-to-end visual solutions</strong> tailored to your unique vision. 
-           <br />From graphics to motion and 3D visuals, we bring creativity and innovation together under one roof.
+           <br />From graphics to motion and 3D visuals, we bring <br />creativity and innovation together under one roof.
             <br />
             <br />
-            InkFrame was built on the belief that great design is more than just attractive visuals. <br />It should <strong>communicate clearly, solve real challenges,</strong> <br />and give brands a distinct identity that people remember.
+            InkFrame was built on the belief that great design <br />isn't invented—it's discovered.  <strong>It's hidden in ideas, <br />moments, and the beauty of everyday chaos.</strong> <br />At InkFrame, we uncover it, frame it, and transform <br />it into meaningful experiences for <strong>the right audience, <br />at the right time, and with the right purpose.</strong>
           </p>
         </div>
 

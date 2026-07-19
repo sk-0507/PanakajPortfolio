@@ -1,0 +1,443 @@
+/* ============================================================
+   src/styles/WorkDetailPage.css
+   ============================================================ */
+
+.work-detail {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background: var(--black);
+  color: var(--white);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 40px 60px 80px;
+  animation: workDetailIn 0.5s ease both;
+}
+
+@keyframes workDetailIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes workDetailFadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Back button ── */
+.work-detail__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-nav);
+  font-size: 13px;
+  font-weight: 200;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--white);
+  cursor: none;
+  margin-bottom: 70px;
+  transition: color 0.25s ease, transform 0.25s ease;
+  animation: workDetailFadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.05s;
+}
+
+.work-detail__back:hover {
+  color: var(--accent);
+  transform: translate(-4px, -2px);
+}
+
+.work-detail__back-icon {
+  font-size: 15px;
+  line-height: 1;
+}
+
+/* ── Content grid ── */
+.work-detail__content {
+  display: grid;
+  grid-template-columns: minmax(280px, 420px) 1fr;
+  gap: 80px;
+  align-items: start;
+
+  opacity: 1;
+  filter: blur(0);
+  transform: scale(1);
+  transition: opacity 0.48s ease, filter 0.48s ease, transform 0.48s ease;
+  animation: workDetailContentIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Triggered right before navigating to the next project — blurs
+   and fades the whole panel out smoothly. */
+.work-detail__content--leaving {
+  opacity: 0;
+  filter: blur(18px);
+  transform: scale(0.98);
+  pointer-events: none;
+}
+
+@keyframes workDetailContentIn {
+  from {
+    opacity: 0;
+    filter: blur(18px);
+    transform: scale(1.02);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+  }
+}
+
+/* ── Left: info ── */
+.work-detail__info {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding-top: 20px;
+  animation: workDetailFadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.15s;
+}
+
+.work-detail__title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.work-detail__title {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 200;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: var(--text-transform);
+}
+
+.work-detail__year {
+  font-family: var(--font-nav);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--white);
+  opacity: 0.75;
+}
+
+.work-detail__desc {
+  font-family: var(--font-nav);
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 420px;
+}
+
+.work-detail__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.work-detail__tag {
+  font-family: var(--font-nav);
+  font-size: 12px;
+  font-weight: 200;
+  letter-spacing: 0.08em;
+  text-transform: var(--text-transform);
+  padding: 5px 12px;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  color: var(--white);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+/* .work-detail__tag:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+} */
+
+/* ── Right: visual (thumbs + hero) ── */
+.work-detail__visual {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  animation: workDetailFadeUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.22s;
+}
+
+.work-detail__dial-wrap {
+  position: relative;
+  width: 140px;
+  flex-shrink: 0;
+}
+
+.work-detail__thumbs {
+  /* exactly 3 tiles + 2 gaps tall */
+  height: calc(3 * var(--thumb-h, 100px) + 2 * 16px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.work-detail__thumbs::-webkit-scrollbar {
+  display: none;
+}
+
+.work-detail__thumb-track {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Soft fade top/bottom so the dial reads as a window rather than
+   a plain list — the item at the very edge dissolves into the bg. */
+.work-detail__dial-fade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 46px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.work-detail__dial-fade--top {
+  top: 0;
+  background: linear-gradient(to bottom, var(--black) 0%, transparent 100%);
+}
+
+.work-detail__dial-fade--bottom {
+  bottom: 0;
+  background: linear-gradient(to top, var(--black) 0%, transparent 100%);
+}
+
+.work-detail__thumb {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: var(--thumb-h, 100px);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+  cursor: none;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+  transform-origin: center center;
+
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.4s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.work-detail__thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* The centered tile always keeps a visible accent ring. */
+.work-detail__thumb--active {
+  border-color: var(--accent);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--accent);
+}
+
+.work-detail__hero-frame {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  /* aspect-ratio is set inline via JS, driven by the actual image */
+  transition: aspect-ratio 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+}
+
+/* All gallery images are stacked absolutely; only the active one
+   is visible, and switching between them crossfades + settles in
+   with a tiny scale for a bit of life instead of a hard cut. */
+.work-detail__hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.03);
+  pointer-events: none;
+  transition: opacity 0.6s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.work-detail__hero-img--active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+  z-index: 1;
+}
+
+.work-detail__hero-img--placeholder {
+  background: linear-gradient(135deg, #1a1010 0%, #0c0c0c 65%);
+}
+
+/* ── Next project button ── */
+.work-detail__next {
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  z-index: 310;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 12px 12px 22px;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  background: rgb(255, 255, 255);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  cursor: none;
+  animation: workDetailFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.3s;
+  transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+}
+
+.work-detail__next:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.work-detail__next-label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: var(--font-nav);
+  font-size: 10px;
+  font-weight: 200;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--light-gray);
+  opacity: 0.65;
+  line-height: 1.4;
+}
+
+.work-detail__next-title {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 200;
+  letter-spacing: 0;
+  text-transform: var(--text-transform);
+  color: var(--white);
+  opacity: 1;
+}
+
+.work-detail__next-arrow {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.work-detail__next:hover .work-detail__next-arrow {
+  background: var(--accent);
+  color: var(--white);
+  transform: translateX(3px);
+}
+
+/* ============================================================
+   Responsive Media Queries
+   ============================================================ */
+
+@media (max-width: 767px) {
+  .work-detail {
+    padding: 24px 20px 60px;
+  }
+
+  .work-detail__back {
+    margin-bottom: 40px;
+    font-size: 12px;
+  }
+
+  .work-detail__content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .work-detail__info {
+    padding-top: 0;
+    gap: 20px;
+  }
+
+  .work-detail__title {
+    font-size: clamp(36px, 11vw, 56px);
+  }
+
+  .work-detail__desc {
+    font-size: 14px;
+    max-width: 100%;
+  }
+
+  .work-detail__visual {
+    gap: 14px;
+  }
+
+  .work-detail__dial-wrap {
+    width: 92px;
+  }
+
+  .work-detail__thumbs {
+    --thumb-h: 68px;
+  }
+
+  .work-detail__hero-frame {
+    aspect-ratio: 4 / 3;
+  }
+
+  .work-detail__next {
+    right: 16px;
+    bottom: 16px;
+    padding: 8px 8px 8px 16px;
+    gap: 10px;
+  }
+
+  .work-detail__next-title {
+    font-size: 13px;
+  }
+
+  .work-detail__next-arrow {
+    width: 34px;
+    height: 34px;
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .work-detail {
+    padding: 32px 40px 60px;
+  }
+
+  .work-detail__content {
+    grid-template-columns: minmax(240px, 320px) 1fr;
+    gap: 48px;
+  }
+
+  .work-detail__dial-wrap {
+    width: 110px;
+  }
+
+  .work-detail__thumbs {
+    --thumb-h: 84px;
+  }
+}

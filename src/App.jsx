@@ -2,7 +2,7 @@
 // Root component — composes all sections and provides cursor context
 // to interactive child elements.
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useCursor } from './hooks/useCursor';
 
 import Loader       from './components/Loader';
@@ -18,10 +18,16 @@ import Contact      from './components/Contact';
 import About        from './components/About';
 import Footer       from './components/Footer';
 import AskButton    from './components/AskButton';
+import WorkDetailPage from './components/WorkDetailPage';
 import BackgroundGradient from './components/Backgroundgradient.jsx';
+import { PROJECTS } from './data/portfolio.js';
 
 export default function App() {
   const { pos, isLarge, enlargeCursor, shrinkCursor } = useCursor();
+ const [selectedProjectId, setSelectedProjectId] = useState(null);
+        const selectedProject = PROJECTS.find(p => p.id === selectedProjectId);
+         
+    
 
   return (
     <>
@@ -47,10 +53,20 @@ export default function App() {
 
         <Statement />
 
-        <Work
+       <Work
           onItemEnter={enlargeCursor}
           onItemLeave={shrinkCursor}
+          onItemClick={(id) => setSelectedProjectId(id)}
         />
+         {selectedProject && (
+     <WorkDetailPage
+       project={selectedProject}
+       onNavigate={setSelectedProjectId}
+       onClose={() => setSelectedProjectId(null)}
+       onEnter={enlargeCursor}
+       onLeave={shrinkCursor}
+     />
+   )}
 
         <Services
           onEnter={enlargeCursor}

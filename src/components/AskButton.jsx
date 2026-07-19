@@ -68,7 +68,7 @@ export default function AskButton({ onEnter, onLeave }) {
       >
         <span className="ask-btn__icon"></span>
         Let’s talk
-        <span className="ask-btn__shortcut"></span>
+        <span className="ask-btn__shortcut"></span> 
       </button>
 
       {/* ── Mute / Unmute ── */}
