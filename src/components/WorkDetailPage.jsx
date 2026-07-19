@@ -37,9 +37,8 @@ const [activeIndex, setActiveIndex] = useState(0);
 
   // Combine coverImage + images into one gallery, de-duplicated.
   const gallery = useMemo(() => {
-    const list = [coverImage, ...images].filter(Boolean);
-    return Array.from(new Set(list));
-  }, [coverImage, images]);
+    return Array.from(new Set(images.filter(Boolean)));
+  }, [images]);
 
   // Only the centered tile and its direct neighbor (above/below) get
   // treated — anything farther just fades further, since the fixed
@@ -255,7 +254,11 @@ useEffect(() => {
                       onMouseLeave={onLeave}
                       aria-label={`View image ${i + 1}`}
                     >
-                      <img src={src} alt="" />
+                      {/\.(mp4|webm|ogg|mov)$/i.test(src) ? (
+  <video src={src} muted playsInline preload="metadata" />
+) : (
+  <img src={src} alt="" />
+)}
                     </button>
                   ))}
                 </div>
@@ -265,30 +268,62 @@ useEffect(() => {
             </div>
           )}
 
-         <div className="work-detail__hero-frame" style={{ aspectRatio: heroRatio }}>
-            {gallery.length > 0 ? (
-              gallery.map((src, i) => (
-                <img
-                  key={src + i}
-                  ref={(el) => (heroImgRefs.current[i] = el)}
-                  src={src}
-                  alt={title}
-                  className={`work-detail__hero-img${
-                    i === activeIndex ? ' work-detail__hero-img--active' : ''
-                  }`}
-                  onLoad={(e) => {
-                    if (i === activeIndex) {
-                      setHeroRatio(
-                        clampRatio(e.target.naturalWidth, e.target.naturalHeight)
-                      );
-                    }
-                  }}
-                />
-              ))
-            ) : (
-              <div className="work-detail__hero-img work-detail__hero-img--placeholder work-detail__hero-img--active" />
-            )}
-          </div>
+<div className="work-detail__hero-frame">
+  {gallery.length > 0 ? (
+    gallery.map((src, i) => {
+      const isVideo = /\.(mp4|webm|ogg|mov)$/i.test(src);
+
+      return isVideo ? (
+        <video
+          key={src + i}
+          ref={(el) => (heroImgRefs.current[i] = el)}
+          className={`work-detail__hero-img${
+            i === activeIndex ? " work-detail__hero-img--active" : ""
+          }`}
+          // autoPlay
+          controls
+          // muted
+          // loop
+          playsInline
+          onLoadedMetadata={(e) => {
+            if (i === activeIndex) {
+              setHeroRatio(
+                clampRatio(
+                  e.target.videoWidth,
+                  e.target.videoHeight
+                )
+              );
+            }
+          }}
+        >
+          <source src={src} type="video/mp4" />
+        </video>
+      ) : (
+        <img
+          key={src + i}
+          ref={(el) => (heroImgRefs.current[i] = el)}
+          src={src}
+          alt={title}
+          className={`work-detail__hero-img${
+            i === activeIndex ? " work-detail__hero-img--active" : ""
+          }`}
+          onLoad={(e) => {
+            if (i === activeIndex) {
+              setHeroRatio(
+                clampRatio(
+                  e.target.naturalWidth,
+                  e.target.naturalHeight
+                )
+              );
+            }
+          }}
+        />
+      );
+    })
+  ) : (
+    <div className="work-detail__hero-img work-detail__hero-img--placeholder work-detail__hero-img--active" />
+  )}
+</div>
         </div>
       </div>
 
@@ -321,13 +356,11 @@ function buildThresholdList() {
   return list;
 }
 
-// Keeps wildly tall/wide source images from blowing up the layout —
-// same spirit as the thumb dial's fixed 3-slot window.
+// Uses the media's real aspect ratio, so the hero frame adapts
+// to each image/video without cropping or stretching.
 function clampRatio(w, h) {
   if (!w || !h) return 16 / 10;
-  const MIN = 0.75; // tallest allowed
-  const MAX = 1.9;  // widest allowed
-  return Math.min(MAX, Math.max(MIN, w / h));
+  return w / h;
 }
 
 /* ============================================================

@@ -70,7 +70,7 @@ export const PROJECTS = [
             '/Assets/Works/Campaigns/1.jpg',
             '/Assets/Works/Campaigns/2.jpg',
             '/Assets/Works/Campaigns/3.jpg',
-            '/Assets/Works/Campaigns/4.jpg',
+            '/Assets/Works/Campaigns/4.mp4',
             '/Assets/Works/Campaigns/5.jpg',
             '/Assets/Works/Campaigns/5_.jpg',
             '/Assets/Works/Campaigns/6.jpg',
@@ -91,7 +91,7 @@ export const PROJECTS = [
           description: 'A few sentences about the project...',
           coverImage: '/Assets/Works/Reel/cover.jpg',
           images: [
-            '/Assets/Works/Reel/1.jpg',
+            '/Assets/Works/Reel/1.mp4',
             '/Assets/Works/Reel/2.mp4',
             '/Assets/Works/Reel/3.mp4',
             '/Assets/Works/Reel/4.mp4',
@@ -152,7 +152,7 @@ export const PROJECTS = [
           description: 'A few sentences about the project...',
           coverImage: '/Assets/Works/Short-Film/cover.jpg',
           images: [
-            '/Assets/Works/Short-Film/1.jpg',
+            '/Assets/Works/Short-Film/1.mp4',
           ],
           tags : ['GSAP', 'Lenis']
         },
