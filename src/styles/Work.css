@@ -120,7 +120,7 @@
   aspect-ratio: 1 / 1.2;
   position: relative;
   overflow: hidden;
-  border-radius: 8px;
+  /* border-radius: 8px; */
 }
 
 .work-item__bg {

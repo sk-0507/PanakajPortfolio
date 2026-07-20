@@ -94,6 +94,15 @@ useEffect(() => {
       setHeroRatio(clampRatio(img.naturalWidth, img.naturalHeight));
     }
   }, [activeIndex]);
+   // Only one hero video should ever play at once — pause every video
+  // that isn't the currently active one whenever the active index changes.
+  useEffect(() => {
+    heroImgRefs.current.forEach((el, i) => {
+      if (el && el.tagName === 'VIDEO' && i !== activeIndex) {
+        el.pause();
+      }
+    });
+  }, [activeIndex]);
 
   // Close on Escape
   useEffect(() => {
