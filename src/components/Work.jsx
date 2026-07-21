@@ -70,6 +70,17 @@ export default function Work({ onItemEnter, onItemLeave, onItemClick }) {
     track.scrollBy({ left: dir * step, behavior: 'smooth' });
   }, []);
 
+  // Scrolls the clicked tile to the center of the track — same idea
+  // as the thumbnail dial in WorkDetailPage.
+  const scrollToCenter = useCallback((i) => {
+    const track = trackRef.current;
+    const el = itemRefs.current[i];
+    if (!track || !el) return;
+    const target =
+      el.offsetLeft - track.clientWidth / 2 + el.offsetWidth / 2;
+    track.scrollTo({ left: target, behavior: 'smooth' });
+  }, []);
+
   const handleWheel = useCallback((e) => {
     const track = trackRef.current;
     if (!track) return;
@@ -119,7 +130,13 @@ export default function Work({ onItemEnter, onItemLeave, onItemClick }) {
                 coverImage={project.coverImage}
                 onEnter={onItemEnter}
                 onLeave={onItemLeave}
-                onItemClick={() => onItemClick(project.id)}
+                onItemClick={() => {
+  onItemClick(project.id);
+  window.setTimeout(
+    () => scrollToCenter((i + 1) % PROJECTS.length),
+    // 550
+  );
+}}
               />
             </div>
           ))}

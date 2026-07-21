@@ -61,15 +61,16 @@ export default function AskButton({ onEnter, onLeave }) {
   return (
     <>
       {/* ── Ask my work ── */}
-      <button
+      <a
+        href="mailto:pankajvishwakarma8812@gmail.com"
         className="ask-btn"
         onMouseEnter={onEnter}
         onMouseLeave={onLeave}
       >
         <span className="ask-btn__icon"></span>
-        Let’s talk
-        <span className="ask-btn__shortcut"></span> 
-      </button>
+        Let's talk
+        <span className="ask-btn__shortcut"></span>
+      </a>
 
       {/* ── Mute / Unmute ── */}
       <button

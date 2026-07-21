@@ -3,6 +3,7 @@
 
 import React from 'react';
 import '../styles/About.css';
+import ParallaxImage from './ParallaxImage';
 
 export default function About() {
   return (
@@ -14,16 +15,16 @@ export default function About() {
           <h2 className="about__title">About</h2>
           <p className="about__bio">
            <strong>InkFrame</strong>, is a <strong>multidisciplinary creative agency</strong> <br />based in <strong>India</strong>, bringing together designers, artists, <br />and <strong>creative thinkers</strong> who specialize in delivering <br /><strong>end-to-end visual solutions</strong> tailored to your unique vision. 
-           <br />From graphics to motion and 3D visuals, we bring <br />creativity and innovation together under one roof.
+           <br />We help ambitious brands <strong>look premium, launch confidently, and communicate strongly</strong> through design, motion, 3D, and storytelling
             <br />
             <br />
-            InkFrame was built on the belief that great design <br />isn't invented—it's discovered.  <strong>It's hidden in ideas, <br />moments, and the beauty of everyday chaos.</strong> <br />At InkFrame, we uncover it, frame it, and transform <br />it into meaningful experiences for <strong>the right audience, <br />at the right time, and with the right purpose.</strong>
+            InkFrame was built on the belief that great design <br />isn't invented—it's discovered.  <strong>It's hidden in ideas, <br />moments, and the beauty of everyday chaos.</strong> <br />Our role is to uncover it, frame it, and transform <br />it into meaningful experiences for <strong>the right audience, <br />at the right time, and with the right purpose.</strong>
           </p>
         </div>
 
         {/* Top-right — image */}
         <div className="about__block about__image about__image--one">
-          <img src="/Assets/Image/About.png" alt="About" style={{ width: "100%", height: "auto" }}/>
+            <ParallaxImage src="/Assets/Image/About.png" alt="About" />
         </div>
 
       </div>
@@ -31,9 +32,7 @@ export default function About() {
 
         {/* Bottom-left — image */}
         <div className="about__block about__image about__image--two">
-          
-            <img src="/Assets/Image/Founder_Pankaj.jpg" alt="Founder Pankaj Vishwakarma" style={{ width: "100%", height: "auto" }}/>
-          
+            <ParallaxImage src="/Assets/Image/Founder_Pankaj.jpg" alt="Founder Pankaj Vishwakarma" />
         </div>
 
         {/* Bottom-right — heading + bio */}

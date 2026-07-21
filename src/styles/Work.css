@@ -80,6 +80,23 @@
   z-index: 1;
 }
 
+.work__slide:hover {
+  transform: scale(1);
+  filter: blur(0);
+  opacity: 1;
+  z-index: 2;
+}
+
+/* If any slide is being hovered, the center/active slide should
+   step back to its default blurred state — unless it's the one
+   being hovered. Only one tile is ever in focus at a time. */
+.work__track:has(.work__slide:hover) .work__slide--active:not(:hover) {
+  transform: scale(0.88);
+  filter: blur(6px);
+  opacity: 0.45;
+  z-index: 0;
+}
+
 /* Nav buttons */
 .work__nav {
   flex-shrink: 0;

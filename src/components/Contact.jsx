@@ -61,12 +61,24 @@ export default function Contact({ onEnter, onLeave }) {
               <span className="contact__detail-label">Social handle</span>
               <span className="contact__detail-value contact__available">
                 <span className="contact__available-dot" />
-                <a href="https://www.linkedin.com/in/pankaj-vishwakarma-74518319a/ " target="_blank" rel="noopener noreferrer" onMouseEnter={onEnter} onMouseLeave={onLeave}>
-                  <img src="/Assets/Image/linkedin.png" alt="LinkedIn" style={{ width: "30px", height: "auto" }} />
-                </a>
-                <a href="https://www.behance.net/pankajvishwak21" target="_blank" rel="noopener noreferrer" onMouseEnter={onEnter} onMouseLeave={onLeave}>
-                  <img src="/Assets/Image/Behance.png" alt="Behance" style={{ width: "30px", height: "auto" }} />
-                </a>
+                <a href="https://www.linkedin.com/in/pankaj-vishwakarma-74518319a/ "
+  target="_blank"
+  rel="noopener noreferrer"
+  className="contact__social-icon"
+  onMouseEnter={onEnter}
+  onMouseLeave={onLeave}
+>
+  <img src="/Assets/Image/linkedin.png" alt="LinkedIn" style={{ width: "30px", height: "auto" }} />
+</a>
+                <a href="https://www.behance.net/pankajvishwak21"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="contact__social-icon"
+  onMouseEnter={onEnter}
+  onMouseLeave={onLeave}
+>
+  <img src="/Assets/Image/Behance.png" alt="Behance" style={{ width: "30px", height: "auto" }} />
+</a>
               </span>
             </li>
           </ul>

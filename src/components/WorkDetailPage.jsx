@@ -7,6 +7,7 @@
 // its immediate neighbor above/below shrinks and blurs.
 
 import React, { useEffect, useMemo, useRef, useState } from 'react';
+// import BackgroundGradient from './Backgroundgradient';
 import '../styles/WorkDetailPage.css';
 
 export default function WorkDetailPage({
@@ -200,6 +201,7 @@ useEffect(() => {
 
   return (
     <div className="work-detail">
+      {/* <BackgroundGradient /> */}
       {/* ── Back ── */}
       <button
         className="work-detail__back"
