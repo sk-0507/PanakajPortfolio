@@ -1,6 +1,10 @@
 /* ============================================================
    src/styles/WorkDetailPage.css
    ============================================================ */
+.productdetails-meta-data {
+  font-family: var(--font-nav);
+  color: rgba(255, 255, 255, 0.6);
+}
 
 .work-detail {
   position: fixed;
@@ -15,13 +19,25 @@
 }
 
 @keyframes workDetailIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes workDetailFadeUp {
-  from { opacity: 0; transform: translateY(22px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ── Back button ── */
@@ -81,6 +97,7 @@
     filter: blur(18px);
     transform: scale(1.02);
   }
+
   to {
     opacity: 1;
     filter: blur(0);
@@ -128,7 +145,7 @@
   font-size: 16px;
   font-weight: 200;
   line-height: 1.75;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255);
   max-width: 420px;
 }
 
@@ -165,10 +182,12 @@
   justify-content: center;
   animation: workDetailFadeUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
   animation-delay: 0.22s;
-  height: 80vh;      /* was: 100vh */
+  height: 80vh;
+  /* was: 100vh */
   max-height: 100%;
   width: 100%;
-  margin: 0 auto;    /* add this — centers it horizontally within its grid column */
+  margin: 0 auto;
+  /* add this — centers it horizontally within its grid column */
 }
 
 .work-detail__dial-wrap {
@@ -263,8 +282,10 @@
   background: rgba(255, 255, 255, 0);
   /* border: 1px solid var(--border); */
   height: 100%;
-  max-height: 100%;   /* add this */
-  max-width: 100%;    /* add this */
+  max-height: 100%;
+  /* add this */
+  max-width: 100%;
+  /* add this */
 }
 
 /* All gallery images are stacked absolutely; only the active one
@@ -275,12 +296,13 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;   /* was: cover */
+  object-fit: contain;
+  /* was: cover */
   opacity: 0;
   transform: scale(1.03);
   pointer-events: none;
   transition: opacity 0.6s ease,
-              transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
   background: #00000000;
 }
 
@@ -296,29 +318,33 @@
 }
 
 /* ── Next project button ── */
+/* ── Next project button ── */
 .work-detail__next {
-  position: fixed;
-  right: 32px;
-  bottom: 32px;
+  position: absolute;
+  top: 40px;
+  right: 60px;
   z-index: 310;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 16px;
-  padding: 12px 12px 12px 22px;
-  border-radius: 100px;
-  border: 1px solid var(--border);
-  background: rgb(255, 255, 255);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  gap: 8px;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--font-nav);
+  font-size: 13px;
+  font-weight: 200;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--white);
   cursor: none;
-  animation: workDetailFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
-  animation-delay: 0.3s;
-  transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+  transition: color 0.25s ease, transform 0.25s ease;
+  animation: workDetailFadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.05s;
 }
 
 .work-detail__next:hover {
-  border-color: var(--accent);
-  transform: translateY(-2px);
+ transform: translateY(0) scale(1.08);
+   
 }
 
 .work-detail__next-label {
@@ -333,6 +359,7 @@
   color: var(--light-gray);
   opacity: 0.65;
   line-height: 1.4;
+  z-index: 1;
 }
 
 .work-detail__next-title {
@@ -346,23 +373,8 @@
 }
 
 .work-detail__next-arrow {
-  flex-shrink: 0;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--white);
-  color: var(--black);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
-}
-
-.work-detail__next:hover .work-detail__next-arrow {
-  background: var(--accent);
-  color: var(--white);
-  transform: translateX(3px);
+  font-size: 15px;
+  line-height: 1;
 }
 
 /* ============================================================
@@ -381,9 +393,10 @@
 
   .work-detail__content {
     display: grid;
-  grid-template-columns: minmax(320px, 420px) 1fr;
-  gap: 80px;
-  align-items: center;   /* was: start */
+    grid-template-columns: minmax(320px, 420px) 1fr;
+    gap: 80px;
+    align-items: center;
+    /* was: start */
   }
 
   .work-detail__info {
@@ -427,10 +440,16 @@
     font-size: 13px;
   }
 
+
+  .work-detail__next {
+    top: 24px;
+    right: 20px;
+    font-size: 11px;
+    gap: 6px;
+  }
+
   .work-detail__next-arrow {
-    width: 34px;
-    height: 34px;
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 
@@ -451,4 +470,23 @@
   .work-detail__thumbs {
     --thumb-h: 84px;
   }
+
+
+
+  /* ── Dynamic desc/tags swap on dial scroll ── */
+  .work-detail__desc,
+  .work-detail__tags {
+    animation: workDetailTextSwap 0.35s ease both;
+  }
+
+  @keyframes workDetailTextSwap {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
 }

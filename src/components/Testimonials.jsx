@@ -20,9 +20,9 @@ const TESTIMONIALS = [
   },
   {
     id: 3,
-    quote: 'Pankaj understands what we actually need. He brings fresh ideas, pays attention to details, and always tries to create something that connects with our audience. It’s been great having him as our creative partner.',
+    quote: "He understands both the project's objectives and the client's perspective, bringing thoughtful ideas that align with business goals rather than just aesthetics. It's been great having him as our creative partner.",
     name: 'Nilesh Singh',
-    role: 'Owner, New National Jewellers',
+    role: 'Independent Creative Director, Mumbai India',
     initial: 'NS',
   }
   

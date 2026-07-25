@@ -32,7 +32,7 @@ export default function About() {
 
         {/* Bottom-left — image */}
         <div className="about__block about__image about__image--two">
-            <ParallaxImage src="/Assets/Image/Founder_Pankaj.jpg" alt="Founder Pankaj Vishwakarma" />
+            <img src="/Assets/Image/Founder_Pankaj.jpg" alt="Founder Pankaj Vishwakarma" style={{width: "100%", height: "auto"}}/>
         </div>
 
         {/* Bottom-right — heading + bio */}

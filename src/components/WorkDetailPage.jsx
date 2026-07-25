@@ -9,16 +9,17 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 // import BackgroundGradient from './Backgroundgradient';
 import '../styles/WorkDetailPage.css';
+import { PROJECTS } from '../data/portfolio';
 
 export default function WorkDetailPage({
   project,
-  projects = [],
+  projects = PROJECTS,
   onClose,
   onNavigate,
   onEnter,
   onLeave,
 }) {
-const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
   const [edgePad, setEdgePad] = useState(0);
   const [isLeaving, setIsLeaving] = useState(false);
   const [heroRatio, setHeroRatio] = useState(16 / 10);
@@ -34,12 +35,26 @@ const [activeIndex, setActiveIndex] = useState(0);
     coverImage,
     images = [],
     tags = [],
+    role,
+    client,
+    services = [],
   } = project || {};
 
   // Combine coverImage + images into one gallery, de-duplicated.
   const gallery = useMemo(() => {
     return Array.from(new Set(images.filter(Boolean)));
   }, [images]);
+
+  // Description/services can be a single value applied to every slide,
+  // or an array with one entry per gallery image — when it's an array,
+  // it swaps in sync with whichever thumbnail is centered in the dial.
+  const activeDescription = Array.isArray(description)
+    ? description[Math.min(activeIndex, description.length - 1)] ?? ''
+    : description;
+
+  const activeServices = Array.isArray(services[0])
+    ? services[Math.min(activeIndex, services.length - 1)] ?? []
+    : services;
 
   // Only the centered tile and its direct neighbor (above/below) get
   // treated — anything farther just fades further, since the fixed
@@ -79,10 +94,8 @@ const [activeIndex, setActiveIndex] = useState(0);
 
   // Reset to the first image whenever a new project is opened, and
   // snap the dial back to the top so it lines up with index 0.
-useEffect(() => {
+  useEffect(() => {
     setActiveIndex(0);
-    itemRefs.current = [];
-    heroImgRefs.current = [];
     setHeroRatio(16 / 10);
     if (thumbsRef.current) thumbsRef.current.scrollTo({ top: 0 });
   }, [project?.id]);
@@ -95,7 +108,7 @@ useEffect(() => {
       setHeroRatio(clampRatio(img.naturalWidth, img.naturalHeight));
     }
   }, [activeIndex]);
-   // Only one hero video should ever play at once — pause every video
+  // Only one hero video should ever play at once — pause every video
   // that isn't the currently active one whenever the active index changes.
   useEffect(() => {
     heroImgRefs.current.forEach((el, i) => {
@@ -164,7 +177,7 @@ useEffect(() => {
 
     itemRefs.current.forEach((el) => el && observer.observe(el));
     return () => observer.disconnect();
-  }, [gallery.length, edgePad]);
+  }, [gallery.length, edgePad, project?.id]);
 
   // Clicking a visible-but-off-center thumb scrolls it to the middle
   // of the dial instead of jumping the image instantly.
@@ -215,29 +228,30 @@ useEffect(() => {
 
       <div
         key={project?.id}
-        className={`work-detail__content${
-          isLeaving ? ' work-detail__content--leaving' : ''
-        }`}
+        className={`work-detail__content${isLeaving ? ' work-detail__content--leaving' : ''
+          }`}
       >
         {/* ── Left: info ── */}
         <div className="work-detail__info">
           <div className="work-detail__title-row">
             <h1 className="work-detail__title">{title}</h1>
-            {year && <span className="work-detail__year">{year}</span>}
+            {/* {year && <span className="work-detail__year">{year}</span>} */}
           </div>
 
-          {description && (
-            <p className="work-detail__desc">{description}</p>
-          )}
+
 
           {tags.length > 0 && (
-            <div className="work-detail__tags">
-              {tags.map((tag) => (
-                <span key={tag} className="work-detail__tag">
-                  {tag}
+            <div className="work-detail__tags" key={`services-${activeIndex}`}>
+              {activeServices.map((tag) => (
+                <span key={tag} className='productdetails-meta-data' >
+                  {tag},
                 </span>
               ))}
             </div>
+
+          )}
+          {activeDescription && (
+            <p className="work-detail__desc" key={`desc-${activeIndex}`}>{activeDescription}</p>
           )}
         </div>
 
@@ -256,9 +270,8 @@ useEffect(() => {
                       type="button"
                       ref={(el) => (itemRefs.current[i] = el)}
                       data-thumb-index={i}
-                      className={`work-detail__thumb${
-                        i === activeIndex ? ' work-detail__thumb--active' : ''
-                      }`}
+                      className={`work-detail__thumb${i === activeIndex ? ' work-detail__thumb--active' : ''
+                        }`}
                       style={getThumbStyle(i)}
                       onClick={() => scrollToIndex(i)}
                       onMouseEnter={onEnter}
@@ -266,10 +279,10 @@ useEffect(() => {
                       aria-label={`View image ${i + 1}`}
                     >
                       {/\.(mp4|webm|ogg|mov)$/i.test(src) ? (
-  <video src={src} muted playsInline preload="metadata" />
-) : (
-  <img src={src} alt="" />
-)}
+                        <video src={src} muted playsInline preload="metadata" />
+                      ) : (
+                        <img src={src} alt="" />
+                      )}
                     </button>
                   ))}
                 </div>
@@ -279,62 +292,60 @@ useEffect(() => {
             </div>
           )}
 
-<div className="work-detail__hero-frame">
-  {gallery.length > 0 ? (
-    gallery.map((src, i) => {
-      const isVideo = /\.(mp4|webm|ogg|mov)$/i.test(src);
+          <div className="work-detail__hero-frame">
+            {gallery.length > 0 ? (
+              gallery.map((src, i) => {
+                const isVideo = /\.(mp4|webm|ogg|mov)$/i.test(src);
 
-      return isVideo ? (
-        <video
-          key={src + i}
-          ref={(el) => (heroImgRefs.current[i] = el)}
-          className={`work-detail__hero-img${
-            i === activeIndex ? " work-detail__hero-img--active" : ""
-          }`}
-          // autoPlay
-          controls
-          // muted
-          // loop
-          playsInline
-          onLoadedMetadata={(e) => {
-            if (i === activeIndex) {
-              setHeroRatio(
-                clampRatio(
-                  e.target.videoWidth,
-                  e.target.videoHeight
-                )
-              );
-            }
-          }}
-        >
-          <source src={src} type="video/mp4" />
-        </video>
-      ) : (
-        <img
-          key={src + i}
-          ref={(el) => (heroImgRefs.current[i] = el)}
-          src={src}
-          alt={title}
-          className={`work-detail__hero-img${
-            i === activeIndex ? " work-detail__hero-img--active" : ""
-          }`}
-          onLoad={(e) => {
-            if (i === activeIndex) {
-              setHeroRatio(
-                clampRatio(
-                  e.target.naturalWidth,
-                  e.target.naturalHeight
-                )
-              );
-            }
-          }}
-        />
-      );
-    })
-  ) : (
-    <div className="work-detail__hero-img work-detail__hero-img--placeholder work-detail__hero-img--active" />
-  )}
-</div>
+                return isVideo ? (
+                  <video
+                    key={src + i}
+                    ref={(el) => (heroImgRefs.current[i] = el)}
+                    className={`work-detail__hero-img${i === activeIndex ? " work-detail__hero-img--active" : ""
+                      }`}
+                    // autoPlay
+                    controls
+                    // muted
+                    // loop
+                    playsInline
+                    onLoadedMetadata={(e) => {
+                      if (i === activeIndex) {
+                        setHeroRatio(
+                          clampRatio(
+                            e.target.videoWidth,
+                            e.target.videoHeight
+                          )
+                        );
+                      }
+                    }}
+                  >
+                    <source src={src} type="video/mp4" />
+                  </video>
+                ) : (
+                  <img
+                    key={src + i}
+                    ref={(el) => (heroImgRefs.current[i] = el)}
+                    src={src}
+                    alt={title}
+                    className={`work-detail__hero-img${i === activeIndex ? " work-detail__hero-img--active" : ""
+                      }`}
+                    onLoad={(e) => {
+                      if (i === activeIndex) {
+                        setHeroRatio(
+                          clampRatio(
+                            e.target.naturalWidth,
+                            e.target.naturalHeight
+                          )
+                        );
+                      }
+                    }}
+                  />
+                );
+              })
+            ) : (
+              <div className="work-detail__hero-img work-detail__hero-img--placeholder work-detail__hero-img--active" />
+            )}
+          </div>
         </div>
       </div>
 
@@ -347,12 +358,7 @@ useEffect(() => {
           onMouseEnter={onEnter}
           onMouseLeave={onLeave}
         >
-          <span className="work-detail__next-label">
-            Next
-            <span className="work-detail__next-title">
-              {nextProject.title}
-            </span>
-          </span>
+          Next: {nextProject.title}
           <span className="work-detail__next-arrow">&#8594;</span>
         </button>
       )}

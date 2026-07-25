@@ -83,12 +83,14 @@
 }
 
 .service-item__arrow {
+  font-family: none;
   font-size: 22px;
   color: var(--accent);
   transition: transform 0.3s ease, color 0.2s;
 }
 
 .service-item--open .service-item__arrow {
+  
   transform: rotate(45deg);
   color: var(--light-gray);
 }

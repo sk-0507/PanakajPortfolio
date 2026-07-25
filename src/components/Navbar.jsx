@@ -15,7 +15,7 @@ export default function Navbar({ onLinkEnter, onLinkLeave }) {
     { href: '#work', label: 'Work' },
     { href: '#services', label: 'Services' },
     // { href: '#process', label: 'Process' },
-    { href: '#testimonials', label: 'Clients' },
+    { href: '#testimonials', label: 'Testimonials' },
     { href: '#contact', label: 'Contact' },
     { href: '#about', label: 'About' },
   ];

@@ -57,7 +57,7 @@ export default function Services({ onEnter, onLeave }) {
             <div className="service-item__row">
               <span className="service-item__num">{s.num}</span>
               <h3 className="service-item__title">{s.title}</h3>
-              <span className="service-item__arrow">↗</span>
+              {/* <span className="service-item__arrow">↗</span> */}
             </div>
 
             <div className="service-item__body">

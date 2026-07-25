@@ -90,7 +90,7 @@
 a.contact__detail-value:hover {
    color: var(--white);
   transform: scale(1.08);
-  text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+  /* text-shadow: 0 0 20px rgba(255, 255, 255, 1); */
 }
 
 /* Available dot */
@@ -107,7 +107,7 @@ a.contact__detail-value:hover {
 
 .contact__social-icon:hover {
   transform: scale(1.15);
-  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.216));
+  /* filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.216)); */
 }
 
 .contact__available-dot {

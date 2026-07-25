@@ -144,13 +144,13 @@ export default function Work({ onItemEnter, onItemLeave, onItemClick }) {
 
         <button
           type="button"
-          className="work__nav work__nav--next"
+          className="work__nav"
           onClick={() => scrollByAmount(1)}
           onMouseEnter={onItemEnter}
           onMouseLeave={onItemLeave}
           aria-label="Next project"
         >
-          &rarr;
+          &#8594;
         </button>
       </div>
     </section>
