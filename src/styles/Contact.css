@@ -89,7 +89,7 @@
 
 a.contact__detail-value:hover {
    color: var(--white);
-  transform: scale(1.08);
+  transform: scale(1.03);
   /* text-shadow: 0 0 20px rgba(255, 255, 255, 1); */
 }
 
@@ -106,7 +106,7 @@ a.contact__detail-value:hover {
 }
 
 .contact__social-icon:hover {
-  transform: scale(1.15);
+  transform: scale(1.1);
   /* filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.216)); */
 }
 

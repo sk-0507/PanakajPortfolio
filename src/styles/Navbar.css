@@ -69,7 +69,7 @@
 
 .navbar__links a:hover {
   color: var(--white);
-  transform: scale(1.15);
+  transform: scale(1.08);
   /* text-shadow: 0 0 20px rgba(255, 255, 255, 1); */
 }
 

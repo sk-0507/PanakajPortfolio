@@ -51,7 +51,7 @@
   cursor: grabbing;
 }
 
-.hero__card-drag-label {
+/* .hero__card-drag-label {
   position: absolute;
   top: -14px;
   left: 50%;
@@ -64,7 +64,7 @@
   padding: 4px 12px;
   text-transform: var(--text-transform);
   white-space: nowrap;
-}
+} */
 
 .hero__welcome {
   font-family: var(--font-display);

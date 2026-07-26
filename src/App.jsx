@@ -33,7 +33,7 @@ export default function App() {
     <>
       <BackgroundGradient/>
       {/* Page loader on initial load */}
-      <Loader />
+      {/* <Loader /> */}
 
       {/* Custom cursor — rendered outside the page flow */}
       <Cursor pos={pos} isLarge={isLarge} />
