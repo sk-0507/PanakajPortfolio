@@ -56,6 +56,8 @@
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   -ms-overflow-style: none;
+   flex: 1 1 auto;   /* NEW */
+  min-width: 0;     /* NEW — prevents flex overflow on small screens */
 }
 
 .work__track::-webkit-scrollbar {
@@ -81,21 +83,25 @@
   z-index: 1;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .work__slide:hover {
   transform: scale(1);
   filter: blur(0);
   opacity: 1;
   z-index: 2;
 }
+}
 
 /* If any slide is being hovered, the center/active slide should
    step back to its default blurred state — unless it's the one
    being hovered. Only one tile is ever in focus at a time. */
+@media (hover: hover) and (pointer: fine) {
 .work__track:has(.work__slide:hover) .work__slide--active:not(:hover) {
   transform: scale(0.98);
   filter: blur(3px);
   opacity: 0.45;
   z-index: 0;
+}
 }
 
 /* Nav buttons */
@@ -124,11 +130,13 @@
     box-shadow 0.2s ease;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .work__nav:hover {
   transform: scale(1.04);
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.3);
   /* box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); */
+}
 }
 
 /* ============================================================
@@ -211,6 +219,9 @@
 
 /* Mobile: < 768px */
 @media (max-width: 767px) {
+  .work-item__inner {
+  background-position: bottom, center center; /* was: right top — was cropping the tile image on narrow tiles */
+  }
   .work {
     padding: 60px 0;
     min-height: auto;

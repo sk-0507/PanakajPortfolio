@@ -390,6 +390,22 @@
    ============================================================ */
 
 @media (max-width: 767px) {
+  .work-detail {
+  padding: 30px 20px 60px;
+}
+
+.work-detail__back {
+  margin-bottom: 30px;
+}
+
+.work-detail__next {
+  position: static;   /* was absolute — drops it into normal flow, after the content */
+  top: auto;
+  right: auto;
+  width: 100%;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
   .work-detail__content {
     display: flex;
     flex-direction: column;

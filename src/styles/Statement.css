@@ -42,8 +42,10 @@
   transition: color 0.3s, transform 0.3s ease, text-shadow 0.3s ease;
 }
 
-.statement__text:hover {
-  transform: scale(1.03);
+@media (hover: hover) and (pointer: fine) {
+  .statement__text:hover {
+    transform: scale(1.03);
+  }
 }
 
 .statement__text--visible {

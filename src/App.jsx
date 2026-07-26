@@ -2,41 +2,50 @@
 // Root component — composes all sections and provides cursor context
 // to interactive child elements.
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useCursor } from './hooks/useCursor';
 
-import Loader       from './components/Loader';
-import Cursor       from './components/Cursor';
-import Navbar       from './components/Navbar';
-import Hero         from './components/Hero';
-import Statement    from './components/Statement';
-import Work         from './components/Work';
-import Services     from './components/Services.jsx';
-import OurProcess   from './components/OurProcess';
+import Loader from './components/Loader';
+import Cursor from './components/Cursor';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Statement from './components/Statement';
+import Work from './components/Work';
+import Services from './components/Services.jsx';
+import OurProcess from './components/OurProcess';
 import Testimonials from './components/Testimonials';
-import Contact      from './components/Contact';
-import About        from './components/About';
-import Footer       from './components/Footer';
-import AskButton    from './components/AskButton';
+import Contact from './components/Contact';
+import About from './components/About';
+import Footer from './components/Footer';
+import AskButton from './components/AskButton';
 import WorkDetailPage from './components/WorkDetailPage';
 import BackgroundGradient from './components/Backgroundgradient.jsx';
 import { PROJECTS } from './data/portfolio.js';
 
 export default function App() {
   const { pos, isLarge, enlargeCursor, shrinkCursor } = useCursor();
- const [selectedProjectId, setSelectedProjectId] = useState(null);
-        const selectedProject = PROJECTS.find(p => p.id === selectedProjectId);
-         
-    
+  const [selectedProjectId, setSelectedProjectId] = useState(null);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const selectedProject = PROJECTS.find(p => p.id === selectedProjectId);
 
+
+  useEffect(() => {
+    const mq = window.matchMedia('(hover: none), (pointer: coarse)');
+    const update = (e) => setIsTouchDevice(e.matches);
+    update(mq);
+    mq.addEventListener ? mq.addEventListener('change', update) : mq.addListener(update);
+    return () => {
+      mq.removeEventListener ? mq.removeEventListener('change', update) : mq.removeListener(update);
+    };
+  }, []);
   return (
     <>
-      <BackgroundGradient/>
+      <BackgroundGradient />
       {/* Page loader on initial load */}
       {/* <Loader /> */}
 
       {/* Custom cursor — rendered outside the page flow */}
-      <Cursor pos={pos} isLarge={isLarge} />
+      {!isTouchDevice && <Cursor pos={pos} isLarge={isLarge} />}
 
       {/* Fixed navigation */}
       <Navbar
@@ -53,20 +62,20 @@ export default function App() {
 
         <Statement />
 
-       <Work
+        <Work
           onItemEnter={enlargeCursor}
           onItemLeave={shrinkCursor}
           onItemClick={(id) => setSelectedProjectId(id)}
         />
-         {selectedProject && (
-     <WorkDetailPage
-       project={selectedProject}
-       onNavigate={setSelectedProjectId}
-       onClose={() => setSelectedProjectId(null)}
-       onEnter={enlargeCursor}
-       onLeave={shrinkCursor}
-     />
-   )}
+        {selectedProject && (
+          <WorkDetailPage
+            project={selectedProject}
+            onNavigate={setSelectedProjectId}
+            onClose={() => setSelectedProjectId(null)}
+            onEnter={enlargeCursor}
+            onLeave={shrinkCursor}
+          />
+        )}
 
         <Services
           onEnter={enlargeCursor}
@@ -76,13 +85,13 @@ export default function App() {
         {/* <OurProcess /> */}
 
         <Testimonials />
-         <About />
+        <About />
         <Contact
           onEnter={enlargeCursor}
           onLeave={shrinkCursor}
         />
 
-       
+
       </main>
 
       <Footer />

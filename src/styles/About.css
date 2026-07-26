@@ -105,6 +105,7 @@
   }
 
   .about__grid__bottom {
+    margin-top: 32px;
     grid-template-columns: 1fr;
     grid-template-areas:
       "text2"
