@@ -167,12 +167,13 @@
     font-size: 12px;
   }
 
-  .ask-btn {
-    bottom: 20px;
-    right: 20px;
+.ask-btn {
+    bottom: 16px;
+    right: 16px;
     padding: 12px 18px;
     font-size: 12px;
     gap: 8px;
+    max-width: calc(100vw - 32px);
   }
 
   .ask-btn__icon {
@@ -237,5 +238,27 @@
 
   .mute-btn__bars {
     height: 15px;
+  }
+}
+@media (min-width: 1440px) {
+  .footer {
+    padding: 48px 64px;
+  }
+
+  .footer__logo {
+    font-size: 15px;
+  }
+
+  .ask-btn {
+    bottom: 40px;
+    right: 40px;
+    padding: 16px 28px;
+    font-size: 15px;
+  }
+
+  .mute-btn {
+    bottom: 108px;
+    right: 40px;
+    padding: 12px 22px;
   }
 }

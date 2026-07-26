@@ -82,7 +82,8 @@
   border: none;
   cursor: pointer;
   z-index: 101;
-  padding: 0;
+  padding: 8px;
+  margin: -8px;
 }
 
 .navbar__hamburger span {
@@ -204,5 +205,20 @@
 
   .navbar__hamburger {
     display: none;
+  }
+}
+@media (min-width: 1440px) {
+  .navbar {
+    padding-left: 64px;
+    padding-right: 64px;
+    padding-top: 26px;
+  }
+
+  .navbar__links {
+    gap: 44px;
+  }
+
+  .navbar__links a {
+    font-size: 19px;
   }
 }

@@ -3,7 +3,15 @@
    ============================================================ */
 .productdetails-meta-data {
   font-family: var(--font-nav);
+  font-size: 12px;
+  font-weight: 200;
+  letter-spacing: 0.08em;
+  text-transform: var(--text-transform);
+  padding: 5px 12px;
+  border: 1px solid var(--border);
+  border-radius: 100px;
   color: rgba(255, 255, 255, 0.6);
+  display: inline-block;
 }
 
 .work-detail {
@@ -382,74 +390,31 @@
    ============================================================ */
 
 @media (max-width: 767px) {
-  .work-detail {
-    padding: 24px 20px 60px;
-  }
-
-  .work-detail__back {
-    margin-bottom: 40px;
-    font-size: 12px;
-  }
-
   .work-detail__content {
-    display: grid;
-    grid-template-columns: minmax(320px, 420px) 1fr;
-    gap: 80px;
-    align-items: center;
-    /* was: start */
-  }
-
-  .work-detail__info {
-    padding-top: 0;
-    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
   }
 
   .work-detail__title {
-    font-size: clamp(36px, 11vw, 56px);
-  }
-
-  .work-detail__desc {
-    font-size: 14px;
-    max-width: 100%;
+    font-size: clamp(32px, 10vw, 48px);
   }
 
   .work-detail__visual {
     gap: 14px;
+    height: 60vh;
   }
 
   .work-detail__dial-wrap {
-    width: 92px;
+    width: 72px;
   }
 
   .work-detail__thumbs {
-    --thumb-h: 68px;
+    --thumb-h: 56px;
   }
-
-  .work-detail__hero-frame {
-    aspect-ratio: 4 / 3;
-  }
-
-  .work-detail__next {
-    right: 16px;
-    bottom: 16px;
-    padding: 8px 8px 8px 16px;
-    gap: 10px;
-  }
-
-  .work-detail__next-title {
-    font-size: 13px;
-  }
-
-
-  .work-detail__next {
-    top: 24px;
-    right: 20px;
-    font-size: 11px;
-    gap: 6px;
-  }
-
-  .work-detail__next-arrow {
-    font-size: 13px;
+  .productdetails-meta-data {
+    font-size: 10px;
+    padding: 4px 10px;
   }
 }
 
@@ -489,4 +454,18 @@
     }
   }
 
+}
+@media (min-width: 1440px) {
+  .productdetails-meta-data {
+    font-size: 13px;
+    padding: 6px 14px;
+  }
+  .work-detail__back,
+  .work-detail__next {
+    font-size: 14px;
+  }
+
+  .work-detail__next-title {
+    font-size: 17px;
+  }
 }

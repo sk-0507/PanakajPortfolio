@@ -96,13 +96,19 @@
     padding: 60px 20px;
   }
 
-  .about__grid {
+  .about__grid__top {
     grid-template-columns: 1fr;
     grid-template-areas:
       "text1"
-      "image1"
-      "image2"
-      "text2";
+      "image1";
+    gap: 32px;
+  }
+
+  .about__grid__bottom {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "text2"
+      "image2";
     gap: 32px;
   }
 
@@ -128,7 +134,8 @@
     padding: 80px 30px;
   }
 
-  .about__grid {
+  .about__grid__top,
+  .about__grid__bottom {
     gap: 40px 50px;
   }
 
@@ -142,4 +149,20 @@
     max-width: 100%;
   }
  
+}
+@media (min-width: 1440px) {
+  .about {
+    max-width: 1680px;
+    margin: 0 auto;
+    padding: 130px 60px;
+  }
+
+  .about__title {
+    font-size: 64px;
+  }
+
+  .about__bio {
+    font-size: 18px;
+    line-height: 1.75;
+  }
 }

@@ -330,3 +330,28 @@
     font-size: 17px;
   }
 }
+@media (min-width: 1440px) {
+  .testimonials__stage {
+    max-width: 1100px;
+  }
+
+  .testimonials__title {
+    font-size: 68px;
+  }
+
+  .testimonials__blockquote {
+    font-size: clamp(20px, 1.6vw, 28px);
+  }
+
+  .testimonials__btn {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .testimonials__avatar {
+    width: 56px;
+    height: 56px;
+    font-size: 16px;
+  }
+}
