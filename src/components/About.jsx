@@ -22,7 +22,7 @@ export default function About() {
           </p>
         </div>
 
-        {/* Top-right — image */}
+        {/* Top-right — image hhhhhh */}
         <div className="about__block about__image about__image--one">
             <ParallaxImage src="/Assets/Image/About.png" alt="About" />
         </div>
