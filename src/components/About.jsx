@@ -14,7 +14,7 @@ export default function About() {
         <div className="about__block about__text about__text--one">
           <h2 className="about__title">About</h2>
           <p className="about__bio">
-           <strong>InkFrame</strong>, is a <strong>multidisciplinary creative agency</strong> <br />based in <strong>India</strong>, bringing together designers, artists, <br />and <strong>creative thinkers</strong> who specialize in delivering <br /><strong>end-to-end visual solutions</strong> tailored to your unique vision. 
+           <strong>InkFrame</strong>, is a <strong>multidisciplinary creative company</strong> <br />based in <strong>Mumbai-India</strong>, bringing together designers, <br />artists, and <strong>creative thinkers</strong> who specialize in delivering <br /><strong>end-to-end visual solutions</strong> tailored to your unique vision. 
            <br />We help ambitious brands <strong>look premium, launch confidently, and communicate strongly</strong> through design, motion, 3D, and storytelling
             <br />
             <br />

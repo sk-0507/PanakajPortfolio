@@ -57,7 +57,7 @@
 }
 
 .navbar__links a {
-  font-family: var(--font-display);
+  font-family: var(--font-nav);
   font-size: 18px;
   font-weight: 200;
   letter-spacing: 0.08em;
