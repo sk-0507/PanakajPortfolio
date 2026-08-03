@@ -33,15 +33,28 @@ export const PROJECTS = [
     role: 'Creative Direction, Visual Identity',
     services: [
             ['Industry - Retail & Shopping', 'Market - India', 'Services - Brochure Design'],
+            ['Industry - Retail & Shopping', 'Market - India', 'Services - Brochure Design'],
+            ['Industry - Retail & Shopping', 'Market - India', 'Services - Brochure Design'],
+            ['Industry - Luxury Hospitality', 'Market - India', 'Services - Brochure Design'],
+            ['Industry - Luxury Hospitality', 'Market - India', 'Services - Brochure Design'],
+            ['Industry - Luxury Hospitality', 'Market - India', 'Services - Brochure Design'],
+            ['Industry - Luxury Hospitality', 'Market - India', 'Services - Brochure Design'],
           ],
           description: [
-            'Created a premium editorial-style brochure that combined elegant layouts, compelling visuals, and clear information hierarchy to reflect the quality and scale of the Phoenix Marketcity experience.',
+            "Created a premium editorial-style brochure that combined elegant layouts, compelling visuals, and clear information hierarchy to reflect the quality and scale of the Phoenix Marketcity experience.",
+            "Created a premium editorial-style brochure that combined elegant layouts, compelling visuals, and clear information hierarchy to reflect the quality and scale of the Phoenix Marketcity experience.",
+            "Created a premium editorial-style brochure that combined elegant layouts, compelling visuals, and clear information hierarchy to reflect the quality and scale of the Phoenix Marketcity experience.",
+            "Designed a premium wedding brochure for The Leela, showcasing its luxury wedding experiences through elegant layouts, refined typography, curated imagery, and an editorial design approach. Every spread was crafted to reflect the brand's timeless elegance and exceptional hospitality.",
           ],
     coverImage: '/Assets/Works/Brochure-Magazine/cover.jpg',
     images: [
       '/Assets/Works/Brochure-Magazine/phoenix-magazin-1.jpg',
       '/Assets/Works/Brochure-Magazine/phoenix-magazin-2.jpg',
       '/Assets/Works/Brochure-Magazine/phoenix-magazin-3.jpg',
+      '/Assets/Works/Brochure-Magazine/LeelaWedding-Brochure-5.jpg',
+      '/Assets/Works/Brochure-Magazine/LeelaWedding-Brochure-6.jpg',
+      '/Assets/Works/Brochure-Magazine/LeelaWedding-Brochure-7.jpg',
+      '/Assets/Works/Brochure-Magazine/LeelaWedding-Brochure-8.jpg',
     ],
     tags: ['GSAP', 'Lenis']
   }, {
@@ -192,9 +205,11 @@ export const PROJECTS = [
     client: 'Meridian Co.',
     role: 'Creative Direction, Visual Identity',
     services: [
-            ['Industry - Wellness', 'Market - United States', 'Services - Short-Form Videos'],
+            ['Industry - Wellness', 'Market - United States', 'Services - A+ Banners'],
+            ['Industry - Wellness', 'Market - United States', 'Services - Listing images'],
           ],
           description: [
+            "Designed a premium Amazon A+ Content and marketplace listing image that elevated Chikitsa's product presentation and strengthened its presence on Amazon.",
             "Designed a premium Amazon A+ Content and marketplace listing image that elevated Chikitsa's product presentation and strengthened its presence on Amazon.",
           ],
     coverImage: '/Assets/Works/E-Marketplace/cover.jpg',
@@ -281,27 +296,27 @@ export const PROJECTS = [
     ],
     tags: ['GSAP', 'Lenis']
   },
-  {
-    id: '11',
-    title: 'Character Design',
-    tag: 'Identity / Strategy',
-    year: '2025',
-    client: 'Meridian Co.',
-    role: 'Creative Direction, Visual Identity',
-    services: [
-            ['Industry - Baby Care', 'Market - India, Thailand, western countries', 'Services - Character Design'],
-          ],
-          description: [
-            'Created playful brand mascot characters for use across packaging, advertising, and promotional campaigns.',
-          ],
-    coverImage: '/Assets/Works/Character-Design/cover.jpg',
-    images: [
-      '/Assets/Works/Character-Design/1.jpg',
-      '/Assets/Works/Character-Design/2.jpg',
-      '/Assets/Works/Character-Design/3.jpg',
-    ],
-    tags: ['GSAP', 'Lenis']
-  },
+  // {
+  //   id: '11',
+  //   title: 'Character Design',
+  //   tag: 'Identity / Strategy',
+  //   year: '2025',
+  //   client: 'Meridian Co.',
+  //   role: 'Creative Direction, Visual Identity',
+  //   services: [
+  //           ['Industry - Baby Care', 'Market - India, Thailand, western countries', 'Services - Character Design'],
+  //         ],
+  //         description: [
+  //           'Created playful brand mascot characters for use across packaging, advertising, and promotional campaigns.',
+  //         ],
+  //   coverImage: '/Assets/Works/Character-Design/cover.jpg',
+  //   images: [
+  //     '/Assets/Works/Character-Design/1.jpg',
+  //     '/Assets/Works/Character-Design/2.jpg',
+  //     '/Assets/Works/Character-Design/3.jpg',
+  //   ],
+  //   tags: ['GSAP', 'Lenis']
+  // },
 
 ];
 
