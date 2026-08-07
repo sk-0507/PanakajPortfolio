@@ -28,7 +28,7 @@ export default function Navbar({ onLinkEnter, onLinkLeave }) {
     <nav className={`navbar${isVisible ? '' : ' navbar--hidden'}`}>
       <span className="navbar__logo">
         <a href='#hero' onClick={handleLinkClick} onMouseEnter={onLinkEnter} onMouseLeave={onLinkLeave}>
-          <img src="/Assets/Image/Logo1.png" alt="InkFrame" srcset="" style={{ width: "150px", height: "auto" }}/>
+          <img src="/Assets/Image/inkframe.png" alt="InkFrame" style={{ width: "150px", height: "auto" }}/>
         </a>
       </span>
 
