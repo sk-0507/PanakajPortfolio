@@ -200,6 +200,7 @@
   }
 
   .service-item__tags {
+    font-family: var(--font-nav);
     padding-left: 0;
     gap: 6px;
   }
