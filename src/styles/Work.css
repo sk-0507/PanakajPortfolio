@@ -220,9 +220,13 @@
 
 /* Mobile: < 768px */
 @media (max-width: 767px) {
+  .work-item {
+  aspect-ratio: 4 / 5;
+  width: clamp(280px, 27vw, 460px);
+}
   .work-item__inner {
-  background-position: bottom, center center; /* was: right top — was cropping the tile image on narrow tiles */
-  }
+  background-position: bottom, center top;
+}
   .work {
     padding: 60px 0;
     min-height: auto;
