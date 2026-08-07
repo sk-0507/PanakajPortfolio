@@ -48,7 +48,7 @@
 .work__track {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 15px;
   overflow-x: auto;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
@@ -66,14 +66,14 @@
 
 .work__slide {
   flex: 0 0 auto;
-  width: clamp(280px, 34vw, 460px);
+  width: clamp(280px, 27.5vw, 460px);
   scroll-snap-align: center;
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
     filter 0.5s cubic-bezier(0.4, 0, 0.2, 1),
     opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: scale(0.98);
+  transform: scale(0.99);
   filter: blur(3px);
-  opacity: 0.45;
+  opacity: .6;
 }
 
 .work__slide--active {
@@ -88,7 +88,7 @@
   transform: scale(1);
   filter: blur(0);
   opacity: 1;
-  z-index: 2;
+  z-index: 0;
 }
 }
 
@@ -97,9 +97,9 @@
    being hovered. Only one tile is ever in focus at a time. */
 @media (hover: hover) and (pointer: fine) {
 .work__track:has(.work__slide:hover) .work__slide--active:not(:hover) {
-  transform: scale(0.98);
+  transform: scale(0.99);
   filter: blur(3px);
-  opacity: 0.45;
+  opacity: .6;
   z-index: 0;
 }
 }
@@ -110,9 +110,9 @@
   flex-shrink: 0;
   width: 52px;
   height: 52px;
-  border-radius: 50%;
+  /* border-radius: 50%;
   border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.06); */
   -webkit-backdrop-filter: blur(8px);
   color: var(--white);
   font-size: 18px;
@@ -125,16 +125,16 @@
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   transition: transform 0.2s ease,
-    background 0.2s ease,
+    /* background 0.2s ease,
     border-color 0.2s ease,
-    box-shadow 0.2s ease;
+    box-shadow 0.2s ease; */
 }
 
 @media (hover: hover) and (pointer: fine) {
 .work__nav:hover {
-  transform: scale(1.04);
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.2);
+  /* background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3); */
   /* box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); */
 }
 }
@@ -147,7 +147,8 @@
   aspect-ratio: 1 / 1.2;
   position: relative;
   overflow: hidden;
-  /* border-radius: 8px; */
+  border-radius: 15px;
+  border: 1px solid var(--border);
 }
 
 .work-item__bg {

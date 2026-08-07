@@ -250,9 +250,9 @@
   display: block;
   width: 100%;
   height: var(--thumb-h, 100px);
-  /* border-radius: 8px; */
-  overflow: hidden;
+  border-radius: 15px;
   border: 1px solid var(--border);
+  overflow: hidden;
   background: rgba(255, 255, 255, 0.03);
   cursor: none;
   flex-shrink: 0;
@@ -277,8 +277,8 @@
 
 /* The centered tile always keeps a visible accent ring. */
 .work-detail__thumb--active {
-  border-color: var(--accent);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--accent);
+  border-color: var(--light-gray);
+  /* box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4), 0 0 0 1px; */
 }
 
 .work-detail__hero-frame {
