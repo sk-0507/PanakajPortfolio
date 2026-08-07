@@ -16,22 +16,25 @@
 
 :root {
   /* Primary Colors */
-  --black: #0c0c0c; /* Background = Studio Black */
-  --white: #F5F4F0; /* Foreground = Off-White */
-  
+  --black: #0c0c0c;
+  /* Background = Studio Black */
+  --white: #F5F4F0;
+  /* Foreground = Off-White */
+
   /* Secondary Colors */
   --gray: #888884;
   --light-gray: #F5F4F0;
-  --charge-green: #ff2b2b; 
-  
+  --charge-green: #ff2b2b;
+
   /* Accents & Special */
-  --accent: #ff2b2b; /* Accent colour = Vivid red */
+  --accent: #ff2b2b;
+  /* Accent colour = Vivid red */
   --border: rgba(255, 255, 255, 0.12);
   --shadow: rgba(255, 43, 43, 0.85);
-  --font-display: 'Syne Medium';
-  --font-body: 'Playfair Display';
-  --font-nav: 'Familjen Grotesk';
-  --text-transform: capitalize; /* Default text-transform for headings and buttons */
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'Playfair Display', serif;
+  --font-nav: 'Familjen Grotesk', sans-serif;
+  /* Default text-transform for headings and buttons */
 }
 
 html {
@@ -81,7 +84,7 @@ button {
   html {
     font-size: 14px;
   }
-  
+
   body {
     overflow-x: hidden;
   }
