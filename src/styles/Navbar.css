@@ -114,7 +114,8 @@
   top: 60px;
   left: 0;
   right: 0;
-  background: rgba(12, 12, 12, 0.3);
+  background: rgba(0, 0, 0, 0.795);
+  /* color: var(--white); */
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
@@ -127,6 +128,9 @@
 .navbar__mobile-menu--open {
   display: flex;
   animation: slideDown 0.3s ease;
+  color: var(--white);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 @keyframes slideDown {

@@ -3,7 +3,7 @@
    ============================================================ */
 
 .testimonials {
-  padding: 100px 40px;
+  padding: 100px 0;
   padding-top: 40px;
   border-top: 1px solid var(--border);
 }
@@ -12,8 +12,10 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
   padding-bottom: 24px;
+  padding-left: 40px;
+  padding-right: 40px;
   border-bottom: 1px solid var(--border);
 }
 
@@ -29,154 +31,261 @@
   font-family: var(--font-nav);
   font-size: 13px;
   color: rgba(255, 255, 255, 0.65);
-  ;
   font-weight: 200;
   letter-spacing: 0.05em;
 }
 
-/* ── Stage ── */
-.testimonials__stage {
+/* ============================================================
+   Carousel shell — same structure as .work__carousel/.work__track
+   ============================================================ */
+
+.testimonials__carousel {
   position: relative;
-  max-width: 860px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 0 20px;
+  display: flex;
+  align-items: center;
 }
 
-/* Big decorative quote mark */
-.testimonials__quote-mark {
-  font-family: var(--font-display);
-  font-size: 160px;
-  font-weight: 200;
-  line-height: 0.6;
-  color: var(--accent);
-  opacity: 0.25;
-  display: block;
-  margin-bottom: -20px;
-  user-select: none;
+.testimonials__track {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
-.testimonials__blockquote {
-  font-family: var(--font-nav);
-  font-size: clamp(12px, 2.vw, 18px);
-  font-weight: 200;
-  line-height: 1.6;
-  color: var(--white);
-  margin-bottom: 48px;
-  animation: fadeSlide 0.4s ease both;
+.testimonials__track::-webkit-scrollbar {
+  display: none;
 }
 
-@keyframes fadeSlide {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* No scale/blur/opacity animation on slides — every card stays sharp,
+   whether active, inactive, or hovered. This is intentionally
+   different from .work__slide. */
+.testimonials__slide {
+  flex: 0 0 auto;
+  width: clamp(280px, 27.5vw, 460px);
+  scroll-snap-align: center;
 }
 
-/* ── Author ── */
-.testimonials__author {
+/* ============================================================
+   Card — fixed box, same footprint as .work-item
+   ============================================================ */
+
+.testimonial-card {
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+  border-radius: 15px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  aspect-ratio: 1 / 1.2; /* used only until JS measures a real height */
+  transition: height 0.35s ease;
+}
+
+.testimonial-card__top {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.testimonial-card__icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--light-gray);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
-  margin-bottom: 56px;
 }
 
-.testimonials__avatar {
-  width: 48px;
-  height: 48px;
+.testimonial-card__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.testimonial-card__top-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.testimonial-card__stars {
+  display: flex;
+  gap: 5px;
+  font-size: 20px;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.testimonial-card__star--filled {
+  color: var(--accent);
+}
+
+.testimonial-card__company {
+  font-family: var(--font-nav);
+  font-size: 12px;
+  color: var(--gray);
+  letter-spacing: 0.03em;
+}
+
+.testimonial-card__quote-wrap {
+  position: relative;
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+
+.testimonial-card__quote {
+  font-family: var(--font-nav);
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 1.6;
+  color: var(--white);
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.testimonial-card__quote--expanded {
+  display: block;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+
+/* Hidden measurer clones — invisible, out of flow, never seen by
+   the user, exist purely so React can read their exact pixel
+   heights and compute the real expand/collapse target. */
+.testimonial-card__quote--measure {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.testimonial-card__quote--clamped {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.testimonial-card__more {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding-left: 32px;
+  font-family: var(--font-nav);
+  font-size: 13px;
+  color: var(--accent);
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.testimonial-card__author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.testimonial-card__avatar {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: #ffffff93(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: var(--light-gray);
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 200;
   display: flex;
   align-items: center;
   justify-content: center;
   letter-spacing: 0.05em;
   flex-shrink: 0;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  transition: transform 0.2s ease,
-    background 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
 }
 
-/* .testimonials__avatar:hover{
-  transform: scale(1.04);
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-} */
-.testimonials__author-info {
+.testimonial-card__author-info {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 2px;
+  min-width: 0;
 }
 
-.testimonials__name {
+.testimonial-card__name {
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 200;
   color: var(--white);
   letter-spacing: 0.02em;
 }
 
-.testimonials__role {
+.testimonial-card__role {
   font-family: var(--font-nav);
-  font-size: 12px;
-  color: var(--light-gray);
+  font-size: 11px;
+  color: var(--gray);
   letter-spacing: 0.04em;
 }
 
-/* ── Navigation ── */
+/* ── Nav buttons — hidden on touch devices, matches .work__nav ── */
 .testimonials__nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-}
-
-.testimonials__btn {
+  display: none;
   font-family: none;
-  /* background: transparent;
-  border: 1px solid var(--border); */
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
   color: var(--white);
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
   font-size: 18px;
-  display: flex;
   align-items: center;
   justify-content: center;
-  cursor: none;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  transition: transform 0.2s ease,
-    background 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
+  cursor: pointer;
+  margin: 0 20px;
+  z-index: 2;
+  background: transparent;
+  border: none;
+  transition: transform 0.2s ease;
 }
 
-.testimonials__btn:hover {
-  transform: scale(1.2);
-  /* background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3); */
-  /* box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); */
+@media (hover: hover) and (pointer: fine) {
+  .testimonials__nav {
+    display: flex;
+  }
+
+  .testimonials__nav:hover {
+    transform: scale(1.2);
+  }
 }
 
+/* ── Dots ── */
 .testimonials__dots {
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 8px;
+  margin-top: 32px;
 }
 
 .testimonials__dot {
@@ -185,7 +294,7 @@
   border-radius: 50%;
   background: var(--border);
   border: none;
-  cursor: none;
+  cursor: pointer;
   transition: background 0.2s, transform 0.2s;
   padding: 0;
 }
@@ -196,18 +305,19 @@
 }
 
 /* ============================================================
-   Responsive Media Queries
+   Responsive Media Queries — mirrors Work.css breakpoints
    ============================================================ */
 
-/* Mobile: < 768px */
 @media (max-width: 767px) {
   .testimonials {
-    padding: 60px 20px;
+    padding: 60px 0;
   }
 
   .testimonials__header {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     padding-bottom: 16px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .testimonials__title {
@@ -218,140 +328,86 @@
     font-size: 12px;
   }
 
-  .testimonials__stage {
-    padding: 0 16px;
+  .testimonials__slide {
+    width: clamp(220px, 78vw, 340px);
   }
 
-  .testimonials__quote-mark {
-    font-size: 100px;
-    margin-bottom: -12px;
+  .testimonial-card {
+    aspect-ratio: 4 / 5;
+    padding: 20px;
   }
 
-  .testimonials__blockquote {
-    font-size: clamp(14px, 4vw, 20px);
-    line-height: 1.5;
-    margin-bottom: 32px;
-  }
-
-  .testimonials__author {
-    gap: 12px;
-    margin-bottom: 40px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .testimonials__avatar {
-    width: 40px;
-    height: 40px;
-    font-size: 12px;
-  }
-
-  .testimonials__author-info {
-    align-items: center;
-  }
-
-  .testimonials__name {
+  .testimonial-card__quote {
     font-size: 13px;
   }
 
-  .testimonials__role {
-    font-size: 11px;
-  }
-
-  .testimonials__btn {
+  .testimonials__nav {
     width: 40px;
     height: 40px;
-    font-size: 16px;
-  }
-
-  .testimonials__dots {
-    gap: 6px;
-  }
-
-  .testimonials__dot {
-    width: 5px;
-    height: 5px;
+    font-size: 15px;
+    margin: 0 10px;
   }
 }
 
-/* Tablet: 768px - 1024px */
 @media (min-width: 768px) and (max-width: 1024px) {
-  .testimonials {
-    padding: 80px 30px;
-  }
-
   .testimonials__header {
-    margin-bottom: 60px;
+    margin-bottom: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 
   .testimonials__title {
     font-size: 48px;
   }
 
-  .testimonials__sub {
-    font-size: 12px;
+  .testimonials__slide {
+    width: clamp(260px, 44vw, 380px);
   }
 
-  .testimonials__stage {
-    padding: 0 30px;
-  }
-
-  .testimonials__quote-mark {
-    font-size: 120px;
-  }
-
-  .testimonials__blockquote {
-    font-size: clamp(16px, 2vw, 24px);
-    margin-bottom: 40px;
-  }
-
-  .testimonials__author {
-    margin-bottom: 48px;
-    gap: 14px;
-  }
-
-  .testimonials__avatar {
-    width: 44px;
-    height: 44px;
-    font-size: 13px;
-  }
-
-  .testimonials__name {
-    font-size: 14px;
-  }
-
-  .testimonials__role {
-    font-size: 12px;
-  }
-
-  .testimonials__btn {
-    width: 42px;
-    height: 42px;
-    font-size: 17px;
+  .testimonial-card {
+    padding: 24px;
   }
 }
+
+@media (max-width: 380px) {
+  .testimonials__slide {
+    width: clamp(200px, 84vw, 300px);
+  }
+
+  .testimonials__nav {
+    width: 34px;
+    height: 34px;
+    font-size: 13px;
+    margin: 0 6px;
+  }
+
+  .testimonials__header {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
 @media (min-width: 1440px) {
-  .testimonials__stage {
-    max-width: 1100px;
+  .testimonials {
+    max-width: 1800px;
+    margin: 0 auto;
   }
 
   .testimonials__title {
     font-size: 68px;
   }
 
-  .testimonials__blockquote {
-    font-size: clamp(20px, 1.6vw, 28px);
+  .testimonials__slide {
+    width: clamp(360px, 26vw, 520px);
   }
 
-  .testimonials__btn {
-    width: 50px;
-    height: 50px;
+  .testimonials__nav {
+    width: 60px;
+    height: 60px;
     font-size: 20px;
   }
 
-  .testimonials__avatar {
-    width: 56px;
-    height: 56px;
-    font-size: 16px;
+  .testimonial-card {
+    padding: 34px;
   }
 }

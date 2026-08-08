@@ -88,7 +88,7 @@
   transform: scale(1);
   filter: blur(0);
   opacity: 1;
-  z-index: 0;
+  z-index: 1;
 }
 }
 
@@ -104,8 +104,9 @@
 }
 }
 
-/* Nav buttons */
+/* Nav buttons — hidden on touch devices, matches .testimonials__nav */
 .work__nav {
+  display: none;
   font-family: none;
   flex-shrink: 0;
   width: 52px;
@@ -116,7 +117,6 @@
   -webkit-backdrop-filter: blur(8px);
   color: var(--white);
   font-size: 18px;
-  display: flex;
   align-items: center;
   justify-content: center;
   cursor: none;
@@ -131,6 +131,10 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
+.work__nav {
+  display: flex;
+}
+
 .work__nav:hover {
   transform: scale(1.2);
   /* background: rgba(255, 255, 255, 0.1);
@@ -144,6 +148,8 @@
    ============================================================ */
 
 .work-item {
+  width: 100%;
+  box-sizing: border-box;
   aspect-ratio: 1 / 1.2;
   position: relative;
   overflow: hidden;
@@ -222,7 +228,6 @@
 @media (max-width: 767px) {
   .work-item {
   aspect-ratio: 4 / 5;
-  width: clamp(280px, 27vw, 460px);
 }
   .work-item__inner {
   background-position: bottom, center top;
