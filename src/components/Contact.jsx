@@ -61,7 +61,7 @@ export default function Contact({ onEnter, onLeave }) {
               <span className="contact__detail-label">Social handle</span>
               <span className="contact__detail-value contact__available">
                 <span className="contact__available-dot" />
-                <a href="https://www.linkedin.com/in/pankaj-vishwakarma-74518319a/ "
+                <a href="https://www.linkedin.com/company/studioinkframe.in/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="contact__social-icon"
@@ -79,7 +79,7 @@ export default function Contact({ onEnter, onLeave }) {
                 >
                   <img src="/Assets/Image/Behance.png" alt="Behance" style={{ width: "30px", height: "auto" }} />
                 </a>
-                                <a href="https://www.instagram.com/pankajvishwakarma888/?hl=en"
+                                <a href="https://www.instagram.com/studioinkframe?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                   target="_blank"
                   rel="noopener noreferrer"
                   className="contact__social-icon"

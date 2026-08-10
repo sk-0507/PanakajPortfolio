@@ -18,32 +18,32 @@ export default function AskButton({ onEnter, onLeave }) {
 
     // Browsers block autoplay before any user gesture.
     // We listen for the first interaction, then start music once.
-    const tryPlay = () => {
-      audio.play()
-        .then(() => setIsPlaying(true))
-        .catch(() => {});
-      window.removeEventListener('click',   tryPlay);
-      window.removeEventListener('keydown', tryPlay);
-      window.removeEventListener('scroll',  tryPlay);
-    };
+    // const tryPlay = () => {
+    //   audio.play()
+    //     .then(() => setIsPlaying(true))
+    //     .catch(() => {});
+    //   window.removeEventListener('click',   tryPlay);
+    //   window.removeEventListener('keydown', tryPlay);
+    //   window.removeEventListener('scroll',  tryPlay);
+    // };
 
-    // Attempt immediate autoplay first
-    audio.play()
-      .then(() => setIsPlaying(true))
-      .catch(() => {
-        // Autoplay blocked by browser — start on first user interaction instead
-        window.addEventListener('click',   tryPlay);
-        window.addEventListener('keydown', tryPlay);
-        window.addEventListener('scroll',  tryPlay);
-      });
+    // // Attempt immediate autoplay first
+    // audio.play()
+    //   .then(() => setIsPlaying(true))
+    //   .catch(() => {
+    //     // Autoplay blocked by browser — start on first user interaction instead
+    //     window.addEventListener('click',   tryPlay);
+    //     window.addEventListener('keydown', tryPlay);
+    //     window.addEventListener('scroll',  tryPlay);
+    //   });
 
-    return () => {
-      audio.pause();
-      audio.src = '';
-      window.removeEventListener('click',   tryPlay);
-      window.removeEventListener('keydown', tryPlay);
-      window.removeEventListener('scroll',  tryPlay);
-    };
+    // return () => {
+    //   audio.pause();
+    //   audio.src = '';
+    //   window.removeEventListener('click',   tryPlay);
+    //   window.removeEventListener('keydown', tryPlay);
+    //   window.removeEventListener('scroll',  tryPlay);
+    // };
   }, []);
 
   const toggleMute = () => {

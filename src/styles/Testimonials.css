@@ -49,6 +49,7 @@
   display: flex;
   align-items: center;
   gap: 15px;
+  padding: 20px;
   overflow-x: auto;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
@@ -91,7 +92,11 @@
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   aspect-ratio: 1 / 1.2; /* used only until JS measures a real height */
-  transition: height 0.35s ease;
+  transition: transform 0.35s ease, height 0.35s ease;
+}
+
+.testimonial-card:hover {
+  transform: scale(1.01);
 }
 
 .testimonial-card__top {
@@ -141,7 +146,7 @@
 .testimonial-card__company {
   font-family: var(--font-nav);
   font-size: 12px;
-  color: var(--gray);
+  color: rgba(255, 255, 255, 0.50);
   letter-spacing: 0.03em;
 }
 
@@ -246,7 +251,7 @@
 .testimonial-card__role {
   font-family: var(--font-nav);
   font-size: 11px;
-  color: var(--gray);
+  color: rgba(255, 255, 255, 0.50);
   letter-spacing: 0.04em;
 }
 
