@@ -1,7 +1,7 @@
 // src/components/Navbar.jsx
 // Fixed top navigation with logo, live clock, and nav links.
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLiveClock } from '../hooks/useLiveClock';
 import { useScrollDirection } from '../hooks/useScrollDirection';
 import '../styles/Navbar.css';
@@ -23,13 +23,21 @@ export default function Navbar({ onLinkEnter, onLinkLeave }) {
   const handleLinkClick = () => {
     setMenuOpen(false);
   };
+  useEffect(() => {
+    if (!menuOpen) return;
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [menuOpen]);
 
   return (
     <>
       <nav className={`navbar${isVisible ? '' : ' navbar--hidden'}`}>
         <span className="navbar__logo">
           <a href='#hero' onClick={handleLinkClick} onMouseEnter={onLinkEnter} onMouseLeave={onLinkLeave}>
-            <img src="/Assets/Image/inkframe.png" alt="InkFrame" style={{ width: "150px", height: "auto" }}/>
+            <img src="/Assets/Image/inkframe.png" alt="InkFrame" style={{ width: "150px", height: "auto" }} />
           </a>
         </span>
 
@@ -55,7 +63,14 @@ export default function Navbar({ onLinkEnter, onLinkLeave }) {
           <span></span>
         </button>
       </nav>
-
+      {menuOpen && (
+        <div
+          className="navbar__mobile-overlay"
+          onClick={() => setMenuOpen(false)}
+          onScroll={() =>  setMenuOpen(false)}
+          aria-hidden="true"
+        />
+      )}
       {/* Mobile Menu — rendered as a sibling of <nav>, not a child, so its
           backdrop-filter isn't nested inside the navbar's own backdrop-filter
           stacking context (nested backdrop-filter fails to render in most
@@ -63,16 +78,17 @@ export default function Navbar({ onLinkEnter, onLinkLeave }) {
       <ul className={`navbar__mobile-menu${menuOpen ? ' navbar__mobile-menu--open' : ''}`}>
         {navLinks.map(({ href, label }) => (
           <li key={href}>
-            <a 
-              href={href} 
+            <a
+              href={href}
               onClick={handleLinkClick}
-              onMouseEnter={onLinkEnter} 
+              onMouseEnter={onLinkEnter}
               onMouseLeave={onLinkLeave}
             >
               {label}
             </a>
           </li>
         ))}
+
       </ul>
     </>
   );

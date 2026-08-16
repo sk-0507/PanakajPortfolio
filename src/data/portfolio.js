@@ -16,11 +16,7 @@ export const PROJECTS = [
       "Designed premium WhatsApp promotional campaigns that communicated seasonal experiences, exclusive dining offers, and special events while preserving The Leela's signature luxury aesthetic and brand identity.",
     ],
       credits: [
-    'Design — Pankaj Vishwakarma',
-    'Design — Pankaj Vishwakarma',
-    'Design — Pankaj Vishwakarma',
-    'Design — Pankaj Vishwakarma',
-    'Design — Pankaj Vishwakarma',
+    'Credits: This project was executed under Indigenous Brand.',
   ],
     coverImage: '/Assets/Works/whatsapp-promotionals/cover.jpg',
     images: [
@@ -54,6 +50,12 @@ export const PROJECTS = [
             "Created a premium editorial-style brochure that combined elegant layouts, compelling visuals, and clear information hierarchy to reflect the quality and scale of the Phoenix Marketcity experience.",
             "Designed a premium wedding brochure for The Leela, showcasing its luxury wedding experiences through elegant layouts, refined typography, curated imagery, and an editorial design approach. Every spread was crafted to reflect the brand's timeless elegance and exceptional hospitality.",
           ],
+          credits: [
+    ,
+    ,
+    ,
+    'Credits: This project was executed under Indigenous Brand.',
+  ],
     coverImage: '/Assets/Works/Brochure-Magazine/cover.jpg',
     images: [
       '/Assets/Works/Brochure-Magazine/phoenix-magazin-1.jpg',
@@ -88,6 +90,13 @@ export const PROJECTS = [
             "Designed premium motion invitations that elevated event communication through refined animation, elegant storytelling, and a visual language consistent with The Leela's brand.",
             "Designed premium motion invitations that elevated event communication through refined animation, elegant storytelling, and a visual language consistent with The Leela's brand.",
           ],
+          credits: [
+    ,
+    'Credits: This project was executed under Indigenous Brand.',
+    'Credits: This project was executed under Indigenous Brand.',
+    ,
+    'Credits: This project was executed under Indigenous Brand.',
+  ],
     coverImage: '/Assets/Works/Motion-Graphics/cover.jpg',
     images: [
       '/Assets/Works/Motion-Graphics/2.mp4',
@@ -265,6 +274,9 @@ export const PROJECTS = [
           description: [
             "Designed elegant menus that showcased culinary offerings through sophisticated layouts and premium typography, with refined aesthetics while staying true to The Leela's luxury hospitality standards.",
           ],
+          credits: [
+    'Credits: This project was executed under Indigenous Brand.',
+  ],
     coverImage: '/Assets/Works/Menus/cover.jpg',
     images: [
       '/Assets/Works/Menus/1.jpg',

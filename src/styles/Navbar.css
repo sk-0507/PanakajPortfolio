@@ -108,6 +108,13 @@
 }
 
 /* ── Mobile Menu ── */
+/* ── Mobile menu tap-to-close overlay ── */
+.navbar__mobile-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 98; /* below .navbar__mobile-menu (99), above page content */
+  background: transparent;
+}
 .navbar__mobile-menu {
   display: none;
   position: fixed;
