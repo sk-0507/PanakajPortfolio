@@ -156,6 +156,14 @@
   color: rgba(255, 255, 255);
   max-width: 420px;
 }
+.work-detail__credit {
+  font-family: var(--font-nav);
+  font-size: 12px;
+  font-weight: 200;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: -8px;
+}
 
 .work-detail__tags {
   display: flex;
@@ -390,6 +398,9 @@
    ============================================================ */
 
 @media (max-width: 767px) {
+  .work-detail__credit {
+  font-size: 11px;
+}
   .work-detail {
   padding: 30px 20px 60px;
 }

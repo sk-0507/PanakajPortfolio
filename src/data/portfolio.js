@@ -15,6 +15,13 @@ export const PROJECTS = [
     description: [
       "Designed premium WhatsApp promotional campaigns that communicated seasonal experiences, exclusive dining offers, and special events while preserving The Leela's signature luxury aesthetic and brand identity.",
     ],
+      credits: [
+    'Design — Pankaj Vishwakarma',
+    'Design — Pankaj Vishwakarma',
+    'Design — Pankaj Vishwakarma',
+    'Design — Pankaj Vishwakarma',
+    'Design — Pankaj Vishwakarma',
+  ],
     coverImage: '/Assets/Works/whatsapp-promotionals/cover.jpg',
     images: [
       '/Assets/Works/whatsapp-promotionals/1.jpg',
@@ -23,6 +30,7 @@ export const PROJECTS = [
       '/Assets/Works/whatsapp-promotionals/4.jpg',
       '/Assets/Works/whatsapp-promotionals/5.jpg',
     ],
+
     tags: ['GSAP', 'Lenis']
   }, {
     id: '02',

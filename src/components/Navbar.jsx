@@ -25,36 +25,41 @@ export default function Navbar({ onLinkEnter, onLinkLeave }) {
   };
 
   return (
-    <nav className={`navbar${isVisible ? '' : ' navbar--hidden'}`}>
-      <span className="navbar__logo">
-        <a href='#hero' onClick={handleLinkClick} onMouseEnter={onLinkEnter} onMouseLeave={onLinkLeave}>
-          <img src="/Assets/Image/inkframe.png" alt="InkFrame" style={{ width: "150px", height: "auto" }}/>
-        </a>
-      </span>
+    <>
+      <nav className={`navbar${isVisible ? '' : ' navbar--hidden'}`}>
+        <span className="navbar__logo">
+          <a href='#hero' onClick={handleLinkClick} onMouseEnter={onLinkEnter} onMouseLeave={onLinkLeave}>
+            <img src="/Assets/Image/inkframe.png" alt="InkFrame" style={{ width: "150px", height: "auto" }}/>
+          </a>
+        </span>
 
-      {/* Desktop/Tablet Menu */}
-      <ul className="navbar__links">
-        {navLinks.map(({ href, label }) => (
-          <li key={href}>
-            <a href={href} onMouseEnter={onLinkEnter} onMouseLeave={onLinkLeave}>
-              {label}
-            </a>
-          </li>
-        ))}
-      </ul>
+        {/* Desktop/Tablet Menu */}
+        <ul className="navbar__links">
+          {navLinks.map(({ href, label }) => (
+            <li key={href}>
+              <a href={href} onMouseEnter={onLinkEnter} onMouseLeave={onLinkLeave}>
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
 
-      {/* Mobile Hamburger Menu */}
-      <button
-        className={`navbar__hamburger${menuOpen ? ' navbar__hamburger--active' : ''}`}
-        onClick={() => setMenuOpen(!menuOpen)}
-        aria-label="Toggle menu"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+        {/* Mobile Hamburger Menu */}
+        <button
+          className={`navbar__hamburger${menuOpen ? ' navbar__hamburger--active' : ''}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
 
-      {/* Mobile Menu - Always rendered but hidden with CSS */}
+      {/* Mobile Menu — rendered as a sibling of <nav>, not a child, so its
+          backdrop-filter isn't nested inside the navbar's own backdrop-filter
+          stacking context (nested backdrop-filter fails to render in most
+          browsers). Always mounted, visibility controlled via CSS. */}
       <ul className={`navbar__mobile-menu${menuOpen ? ' navbar__mobile-menu--open' : ''}`}>
         {navLinks.map(({ href, label }) => (
           <li key={href}>
@@ -69,6 +74,6 @@ export default function Navbar({ onLinkEnter, onLinkLeave }) {
           </li>
         ))}
       </ul>
-    </nav>
+    </>
   );
 }

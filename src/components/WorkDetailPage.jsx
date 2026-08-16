@@ -38,6 +38,7 @@ export default function WorkDetailPage({
     role,
     client,
     services = [],
+    credits = [],
   } = project || {};
 
   // Combine coverImage + images into one gallery, de-duplicated.
@@ -55,6 +56,10 @@ export default function WorkDetailPage({
   const activeServices = Array.isArray(services[0])
     ? services[Math.min(activeIndex, services.length - 1)] ?? []
     : services;
+
+  const activeCredit = Array.isArray(credits)
+    ? credits[Math.min(activeIndex, credits.length - 1)] ?? ''
+    : credits;
 
   // Only the centered tile and its direct neighbor (above/below) get
   // treated — anything farther just fades further, since the fixed
@@ -252,6 +257,9 @@ export default function WorkDetailPage({
           )}
           {activeDescription && (
             <p className="work-detail__desc" key={`desc-${activeIndex}`}>{activeDescription}</p>
+          )}
+          {activeCredit && (
+            <p className="work-detail__credit" key={`credit-${activeIndex}`}>{activeCredit}</p>
           )}
         </div>
 
