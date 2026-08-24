@@ -51,9 +51,9 @@ export const PROJECTS = [
             "Designed a premium wedding brochure for The Leela, showcasing its luxury wedding experiences through elegant layouts, refined typography, curated imagery, and an editorial design approach. Every spread was crafted to reflect the brand's timeless elegance and exceptional hospitality.",
           ],
           credits: [
-    ,
-    ,
-    ,
+    'Credits: This project was executed under Studio Seesaw.',
+    'Credits: This project was executed under Studio Seesaw.',
+    'Credits: This project was executed under Studio Seesaw.',
     'Credits: This project was executed under Indigenous Brand.',
   ],
     coverImage: '/Assets/Works/Brochure-Magazine/cover.jpg',
@@ -91,7 +91,7 @@ export const PROJECTS = [
             "Designed premium motion invitations that elevated event communication through refined animation, elegant storytelling, and a visual language consistent with The Leela's brand.",
           ],
           credits: [
-    ,
+    'Credits: This project was executed under Studio Seesaw.',
     'Credits: This project was executed under Indigenous Brand.',
     'Credits: This project was executed under Indigenous Brand.',
     ,
@@ -123,6 +123,13 @@ export const PROJECTS = [
             ['Industry - Beauty & Cosmetics','Market - India', 'Services - Social Media Creatives'],
             ['Industry - Beauty & Cosmetics','Market - India', 'Services - Social Media Creatives'],
             ['Industry - Beauty & Cosmetics','Market - India', 'Services - Social Media Creatives'],
+            ['Industry - Beauty & Cosmetics','Market - India', 'Services - Social Media Creatives'],
+            ['Industry - Beauty & Cosmetics','Market - India', 'Services - Social Media Creatives'],
+            ['Industry - Wellness', 'Market - United States', 'Services - Short-Form Videos'],
+            ['Industry - Beauty & Cosmetics', 'Market - India', 'Services - Short-Form Videos'],
+            ['Industry - Beauty & Cosmetics', 'Market - India', 'Services - Short-Form Videos'],
+            ['Industry - Beauty & Cosmetics', 'Market - India', 'Services - Short-Form Videos'],
+            ['Industry - Real Estate', 'Market - Mumbai, India', 'Services - Short-Form Videos'],
           ],
           description: [
             "Designed engaging social media creatives that strengthened the brand's digital presence through festive greetings, project highlights, construction updates, and promotional content while maintaining a consistent visual identity.",
@@ -133,7 +140,31 @@ export const PROJECTS = [
             "Designed high-impact social media creatives for product launches, packaging redesigns, and promotional campaigns, ensuring a consistent visual identity across every customer touchpoint.",
             "Designed high-impact social media creatives for product launches, packaging redesigns, and promotional campaigns, ensuring a consistent visual identity across every customer touchpoint.",
             "Designed high-impact social media creatives for product launches, packaging redesigns, and promotional campaigns, ensuring a consistent visual identity across every customer touchpoint.",
+            "Designed high-impact social media creatives for product launches, packaging redesigns, and promotional campaigns, ensuring a consistent visual identity across every customer touchpoint.",
+            "Designed high-impact social media creatives for product launches, packaging redesigns, and promotional campaigns, ensuring a consistent visual identity across every customer touchpoint.",
+            'Crafted promotional short-form videos that showcased product benefits and key features with engaging, story-driven visuals.',
+            'Produced engaging short-form videos that showcased products through compelling visuals, promotional storytelling, and platform-optimized content designed for maximum audience engagement.',
+            'Produced engaging short-form videos that showcased products through compelling visuals, promotional storytelling, and platform-optimized content designed for maximum audience engagement.',
+            'Produced engaging short-form videos that showcased products through compelling visuals, promotional storytelling, and platform-optimized content designed for maximum audience engagement.',
+            'Produced educational and informative short-form videos that simplified real estate concepts, delivered valuable insights, and strengthened audience engagement through platform-optimized visual storytelling. ',
           ],
+          credits: [
+    'Credits: This project was executed under Studio Seesaw.',
+    'Credits: This project was executed under Studio Seesaw.',
+    'Credits: This project was executed under Studio Seesaw.',
+    'Credits: This project was executed under Studio Seesaw.',
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    'Credits: This project was executed under Studio Seesaw.',
+  ],
     coverImage: '/Assets/Works/Campaigns/cover.jpg',
     images: [
       '/Assets/Works/Campaigns/1.jpg',
@@ -146,32 +177,6 @@ export const PROJECTS = [
       '/Assets/Works/Campaigns/6_.jpg',
       '/Assets/Works/Campaigns/7.jpg',
       '/Assets/Works/Campaigns/8.jpg',
-    ],
-    tags: ['GSAP', 'Lenis']
-  },
-  {
-    id: '05',
-    title: 'Short Form Videos',
-    tag: 'Identity / Strategy',
-    year: '2025',
-    client: 'Meridian Co.',
-    role: 'Creative Direction, Visual Identity',
-    services: [
-            ['Industry - Wellness', 'Market - United States', 'Services - Short-Form Videos'],
-            ['Industry - Beauty & Cosmetics', 'Market - India', 'Services - Short-Form Videos'],
-            ['Industry - Beauty & Cosmetics', 'Market - India', 'Services - Short-Form Videos'],
-            ['Industry - Beauty & Cosmetics', 'Market - India', 'Services - Short-Form Videos'],
-            ['Industry - Real Estate', 'Market - Mumbai, India', 'Services - Short-Form Videos'],
-          ],
-          description: [
-            'Crafted promotional short-form videos that showcased product benefits and key features with engaging, story-driven visuals.',
-            'Produced engaging short-form videos that showcased products through compelling visuals, promotional storytelling, and platform-optimized content designed for maximum audience engagement.',
-            'Produced engaging short-form videos that showcased products through compelling visuals, promotional storytelling, and platform-optimized content designed for maximum audience engagement.',
-            'Produced engaging short-form videos that showcased products through compelling visuals, promotional storytelling, and platform-optimized content designed for maximum audience engagement.',
-            'Produced educational and informative short-form videos that simplified real estate concepts, delivered valuable insights, and strengthened audience engagement through platform-optimized visual storytelling. ',
-          ],
-    coverImage: '/Assets/Works/Reel/cover.jpg',
-    images: [
       '/Assets/Works/Reel/1.mp4',
       '/Assets/Works/Reel/2.mp4',
       '/Assets/Works/Reel/3.mp4',
@@ -180,8 +185,46 @@ export const PROJECTS = [
     ],
     tags: ['GSAP', 'Lenis']
   },
+  // {
+  //   id: '05',
+  //   title: 'Short Form Videos',
+  //   tag: 'Identity / Strategy',
+  //   year: '2025',
+  //   client: 'Meridian Co.',
+  //   role: 'Creative Direction, Visual Identity',
+  //   services: [
+  //           ['Industry - Wellness', 'Market - United States', 'Services - Short-Form Videos'],
+  //           ['Industry - Beauty & Cosmetics', 'Market - India', 'Services - Short-Form Videos'],
+  //           ['Industry - Beauty & Cosmetics', 'Market - India', 'Services - Short-Form Videos'],
+  //           ['Industry - Beauty & Cosmetics', 'Market - India', 'Services - Short-Form Videos'],
+  //           ['Industry - Real Estate', 'Market - Mumbai, India', 'Services - Short-Form Videos'],
+  //         ],
+  //         description: [
+  //           'Crafted promotional short-form videos that showcased product benefits and key features with engaging, story-driven visuals.',
+  //           'Produced engaging short-form videos that showcased products through compelling visuals, promotional storytelling, and platform-optimized content designed for maximum audience engagement.',
+  //           'Produced engaging short-form videos that showcased products through compelling visuals, promotional storytelling, and platform-optimized content designed for maximum audience engagement.',
+  //           'Produced engaging short-form videos that showcased products through compelling visuals, promotional storytelling, and platform-optimized content designed for maximum audience engagement.',
+  //           'Produced educational and informative short-form videos that simplified real estate concepts, delivered valuable insights, and strengthened audience engagement through platform-optimized visual storytelling. ',
+  //         ],
+  //         credits: [
+  //   ,
+  //   ,
+  //   ,
+  //   ,
+  //   'Credits: This project was executed under Studio Seesaw.',
+  // ],
+  //   coverImage: '/Assets/Works/Reel/cover.jpg',
+  //   images: [
+  //     '/Assets/Works/Reel/1.mp4',
+  //     '/Assets/Works/Reel/2.mp4',
+  //     '/Assets/Works/Reel/3.mp4',
+  //     '/Assets/Works/Reel/4.mp4',
+  //     '/Assets/Works/Reel/5.mp4',
+  //   ],
+  //   tags: ['GSAP', 'Lenis']
+  // },
   {
-    id: '06',
+    id: '05',
     title: 'Ai Gen Videos',
     tag: 'Identity / Strategy',
     year: '2025',
@@ -189,7 +232,8 @@ export const PROJECTS = [
     role: 'Creative Direction, Visual Identity',
     services: [
             ['Industry - Baby Care', 'Market - India, UAE', 'Services - AI Product Video'],
-            ['Industry - Baby Care', 'Market - India, UAE', 'Services - DOOH'],
+            ['Industry - Food', 'Market - India', 'Services - Ai pitch video'],
+            ['Industry - Beauty & Cosmetics', 'Market - India', 'Services - AI Product Videos'],
             ['Industry - Beauty & Cosmetics', 'Market - India', 'Services - AI Product Videos'],
             ['Industry - Beauty & Cosmetics', 'Market - India', 'Services - AI Product Videos'],
             ['Industry - Real Estate', 'Market - Mumbai, India', 'Services - AI Videos'],
@@ -197,25 +241,35 @@ export const PROJECTS = [
           ],
           description: [
             "Created an AI-driven promotional video featuring engaging animated characters to highlight product benefits, key USPs, and the brand's playful identity.",
-            'Developed a concept for a premium airport advertising film designed to capture attention through bold visuals and impactful brand storytelling.',
+            'A high-quality AI-generated commercial created to showcase Sanjivani Donut Cake and its complete range of five flavors through cinematic visuals, character-driven moments, and premium product-focused imagery.',
+            'Created AI-powered product launch and packaging reveal videos that transform static product visuals into premium cinematic experiences, highlighting new launches and redesigned packaging with impactful storytelling.',
             'Created AI-powered product launch and packaging reveal videos that transform static product visuals into premium cinematic experiences, highlighting new launches and redesigned packaging with impactful storytelling.',
             'Created AI-powered product launch and packaging reveal videos that transform static product visuals into premium cinematic experiences, highlighting new launches and redesigned packaging with impactful storytelling.',
             'Created AI-powered promotional videos that transformed project visuals into cinematic brand content, enhancing the presentation of developments, launches, and marketing campaigns through immersive storytelling.',
             // 'Created AI-powered promotional videos that transformed project visuals into cinematic brand content, enhancing the presentation of developments, launches, and marketing campaigns through immersive storytelling.',
           ],
+          credits: [
+            'Credits: This project was executed under Studio Seesaw.',
+    'Credits: This project was executed under Studio Seesaw.',
+    ,
+    ,
+    ,
+    'Credits: This project was executed under Studio Seesaw.',
+  ],
     coverImage: '/Assets/Works/Ai-Videos/cover.jpg',
     images: [
       '/Assets/Works/Ai-Videos/1.mp4',
       '/Assets/Works/Ai-Videos/2.mp4',
       '/Assets/Works/Ai-Videos/3.mp4',
       '/Assets/Works/Ai-Videos/4.mp4',
+      '/Assets/Works/Ai-Videos/4_.mp4',
       '/Assets/Works/Ai-Videos/5.mp4',
       // '/Assets/Works/Ai-Videos/6.mp4',
     ],
     tags: ['GSAP', 'Lenis']
   },
   {
-    id: '07',
+    id: '06',
     title: 'E-Marketplace Design',
     tag: 'Identity / Strategy',
     year: '2025',
@@ -243,7 +297,7 @@ export const PROJECTS = [
     tags: ['GSAP', 'Lenis']
   },
   {
-    id: '08',
+    id: '07',
     title: 'Short Film',
     tag: 'Identity / Strategy',
     year: '2025',
@@ -255,6 +309,9 @@ export const PROJECTS = [
           description: [
             "Produced a cinematic brand film that showcased Eurobrass's craftsmanship, product excellence, and premium identity through compelling visual storytelling and high-end motion design.",
           ],
+          credits: [
+          'Credits: This project was executed under Studio Seesaw.',
+        ],
     coverImage: '/Assets/Works/Short-Film/cover.jpg',
     images: [
       '/Assets/Works/Short-Film/1.mp4',
@@ -262,7 +319,7 @@ export const PROJECTS = [
     tags: ['GSAP', 'Lenis']
   },
   {
-    id: '09',
+    id: '08',
     title: 'Menu Design',
     tag: 'Identity / Strategy',
     year: '2025',
@@ -286,7 +343,7 @@ export const PROJECTS = [
     tags: ['GSAP', 'Lenis']
   },
   {
-    id: '10',
+    id: '09',
     title: '3d Rendering',
     tag: 'Identity / Strategy',
     year: '2025',
@@ -306,6 +363,9 @@ export const PROJECTS = [
             "Designed a photorealistic 3D exhibition stall that brought the brand's identity to life through an engaging, functional space, enabling clear design visualization before production.",
             "Designed a photorealistic 3D exhibition stall that translated the brand's playful identity into an engaging and functional experience for trade shows and retail events.",
           ],
+          credits: [
+    'Credits: This project was executed under Studio Seesaw.',
+  ],
     coverImage: '/Assets/Works/3d-Renders/cover.jpg',
     images: [
       '/Assets/Works/3d-Renders/1.jpg',

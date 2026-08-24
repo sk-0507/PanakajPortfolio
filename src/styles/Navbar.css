@@ -121,7 +121,7 @@
   top: 60px;
   left: 0;
   right: 0;
-  background: rgba(12, 12, 12, 0.338);
+  background: rgba(255, 253, 253, 0.3);
   /* color: var(--white); */
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -165,7 +165,7 @@
   text-transform: var(--text-transform);
   color: var(--white);
   transition: background 0.2s, color 0.2s;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rsgba(251, 250, 250, 0.05);
 }
 
 .navbar__mobile-menu a:hover {
