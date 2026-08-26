@@ -98,6 +98,8 @@
   padding: 8px 2px;
   transition: border-color 0.2s, background 0.2s;
   caret-color: var(--accent);
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .hero__welcome-input::placeholder {
@@ -224,13 +226,18 @@
   }
 
   .hero__welcome {
-    font-size: clamp(40px, 10vw, 70px);
+    font-size: clamp(32px, 9vw, 70px);
     gap: 8px;
+    flex-wrap: wrap;
+    white-space: normal;
+    row-gap: 6px;
+    max-width: 100%;
   }
 
   .hero__welcome-input {
-    font-size: clamp(40px, 10vw, 70px);
+    font-size: clamp(32px, 9vw, 70px);
     min-width: 120px;
+    max-width: 100%;
     padding: 4px 8px;
   }
 
@@ -280,8 +287,11 @@
   }
 
   .hero__welcome {
-    font-size: clamp(60px, 10vw, 100px);
-  }
+  font-size: clamp(60px, 10vw, 100px);
+  flex-wrap: wrap;
+  white-space: normal;
+  row-gap: 8px;
+}
 
   .hero__welcome-input {
     font-size: clamp(60px, 10vw, 100px);

@@ -14,11 +14,11 @@ export default function About() {
         <div className="about__block about__text about__text--one">
           <h2 className="about__title">About</h2>
           <p className="about__bio">
-           <strong>InkFrame</strong>, is a <strong>multidisciplinary creative company</strong> <br />based in <strong>Mumbai-India</strong>, bringing together designers, <br />artists, and <strong>creative thinkers</strong> who specialize in delivering <br /><strong>end-to-end visual solutions</strong> tailored to your unique vision. 
-           <br />We help ambitious brands <strong>look premium, launch confidently, and communicate strongly</strong> through design, motion, 3D, and storytelling
+           <strong>InkFrame</strong>, is a <strong>multidisciplinary creative place</strong> <br />based in <strong>Mumbai-India</strong>, bringing together designers, <br />artists, and <strong>creative thinkers</strong> who specialize in delivering <br /><strong>end-to-end visual solutions</strong> tailored to your unique vision. 
+           <br />We help ambitious brands <strong>look premium, launch confidently, <br />and communicate strongly</strong> through design, motion, 3D, <br />and storytelling
             <br />
             <br />
-            InkFrame was built on the belief that great design <br />isn't invented—it's discovered.  <strong>It's hidden in ideas, <br />moments, and the beauty of everyday chaos.</strong> <br />Our role is to uncover it, frame it, and transform <br />it into meaningful experiences for <strong>the right audience, <br />at the right time, and with the right purpose.</strong>
+            InkFrame was built on the belief that creativity <br />isn't invented—it's discovered.  <strong>It's hidden in ideas, <br />moments, and the beauty of everyday chaos.</strong> <br />Our role is to uncover it, frame it, and transform <br />it into meaningful experiences for <strong>the right audience, <br />at the right time, and with the right purpose.</strong>
           </p>
         </div>
 
@@ -53,7 +53,7 @@ export default function About() {
             Having worked with creative agencies and collaborated with brands across <strong>diverse industries,</strong> <br />Every collaboration is driven by creativity, strategy, and precision, with one goal in mind: creating work <br />that is not only beautiful but also <strong>meaningful, memorable, and effective.</strong> 
             <br />
             <br />
-            I’m building InkFrame with a simple vision: <strong>to grow alongside the people and brands I work with.</strong>
+            I’m building InkFrame with a simple vision: <strong>to make people believe nothing is impossible.</strong>
           </p>
         </div>
 

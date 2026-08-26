@@ -67,7 +67,6 @@ export default function Navbar({ onLinkEnter, onLinkLeave }) {
         <div
           className="navbar__mobile-overlay"
           onClick={() => setMenuOpen(false)}
-          onScroll={() =>  setMenuOpen(false)}
           aria-hidden="true"
         />
       )}
