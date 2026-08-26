@@ -5,7 +5,7 @@ export const PROJECTS = [
   {
     id: '01',
     title: 'Whatsapp Promotionals',
-    tag: 'Identity / Strategy',
+    tag: 'Design / Execution',
     year: '2026',
     client: 'Meridian Co.',
     role: 'Creative Direction, Visual Identity',
@@ -31,7 +31,7 @@ export const PROJECTS = [
   }, {
     id: '02',
     title: 'Brochure/Magazine',
-    tag: 'Identity / Strategy',
+    tag: 'Design / Communication',
     year: 'Sept 2025',
     client: 'Meridian Co.',
     role: 'Creative Direction, Visual Identity',
@@ -70,7 +70,7 @@ export const PROJECTS = [
   }, {
     id: '03',
     title: 'Motion Graphics',
-    tag: 'Identity / Strategy',
+    tag: 'Story / Motion',
     year: '2025',
     client: 'Meridian Co.',
     role: 'Creative Direction, Visual Identity',
@@ -110,7 +110,7 @@ export const PROJECTS = [
   }, {
     id: '04',
     title: 'Social Media Campaign',
-    tag: 'Identity / Strategy',
+    tag: 'Ideation / Execution',
     year: '2026',
     client: 'Meridian Co.',
     role: 'Creative Direction, Visual Identity',
@@ -226,7 +226,7 @@ export const PROJECTS = [
   {
     id: '05',
     title: 'Ai Gen Videos',
-    tag: 'Identity / Strategy',
+    tag: 'Concept / execution',
     year: '2025',
     client: 'Meridian Co.',
     role: 'Creative Direction, Visual Identity',
@@ -271,7 +271,7 @@ export const PROJECTS = [
   {
     id: '06',
     title: 'E-Marketplace Design',
-    tag: 'Identity / Strategy',
+    tag: 'Design / Conversion',
     year: '2025',
     client: 'Meridian Co.',
     role: 'Creative Direction, Visual Identity',
@@ -299,7 +299,7 @@ export const PROJECTS = [
   {
     id: '07',
     title: 'Short Film',
-    tag: 'Identity / Strategy',
+    tag: 'Strategy / Storytelling',
     year: '2025',
     client: 'Meridian Co.',
     role: 'Creative Direction, Visual Identity',
@@ -321,7 +321,7 @@ export const PROJECTS = [
   {
     id: '08',
     title: 'Menu Design',
-    tag: 'Identity / Strategy',
+    tag: 'Design / Experience',
     year: '2025',
     client: 'Meridian Co.',
     role: 'Creative Direction, Visual Identity',
@@ -345,7 +345,7 @@ export const PROJECTS = [
   {
     id: '09',
     title: '3d Rendering',
-    tag: 'Identity / Strategy',
+    tag: 'Visualization / Execution',
     year: '2025',
     client: 'Meridian Co.',
     role: 'Creative Direction, Visual Identity',
@@ -379,7 +379,7 @@ export const PROJECTS = [
   // {
   //   id: '11',
   //   title: 'Character Design',
-  //   tag: 'Identity / Strategy',
+  //   tag: 'Character / Development',
   //   year: '2025',
   //   client: 'Meridian Co.',
   //   role: 'Creative Direction, Visual Identity',
