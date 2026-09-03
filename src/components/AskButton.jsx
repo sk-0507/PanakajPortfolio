@@ -62,7 +62,7 @@ export default function AskButton({ onEnter, onLeave }) {
     <>
       {/* ── Ask my work ── */}
       <a
-        href="mailto:pankajvishwakarma8812@gmail.com"
+        href="contact@studioinkframe.in"
         className="ask-btn"
         onMouseEnter={onEnter}
         onMouseLeave={onLeave}

@@ -45,12 +45,12 @@ export default function Contact({ onEnter, onLeave }) {
             <li>
               <span className="contact__detail-label">Email</span>
               <a
-                href="mailto:pankajvishwakarma8812@gmail.com"
+                href="mailto:contact@studioinkframe.in"
                 className="contact__detail-value"
                 onMouseEnter={onEnter}
                 onMouseLeave={onLeave}
               >
-                pankajvishwakarma8812@gmail.com
+                contact@studioinkframe.in
               </a>
             </li>
             <li>
