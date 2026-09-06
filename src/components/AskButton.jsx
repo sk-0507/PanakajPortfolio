@@ -51,7 +51,7 @@ export default function AskButton({ onEnter, onLeave }) {
     if (!audio) return;
     if (isMuted) {
       audio.muted = false;
-      audio.play().then(() => setIsPlaying(true)).catch(() => {});
+      audio.play().then(() => setIsPlaying(true)).catch(() => { });
     } else {
       audio.muted = true;
     }
@@ -62,7 +62,7 @@ export default function AskButton({ onEnter, onLeave }) {
     <>
       {/* ── Ask my work ── */}
       <a
-        href="contact@studioinkframe.in"
+        href="mailto:contact@studioinkframe.in"
         className="ask-btn"
         onMouseEnter={onEnter}
         onMouseLeave={onLeave}

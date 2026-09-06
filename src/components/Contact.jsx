@@ -44,14 +44,14 @@ export default function Contact({ onEnter, onLeave }) {
           <ul className="contact__details">
             <li>
               <span className="contact__detail-label">Email</span>
-              <a
-                href="contact@studioinkframe.in"
-                className="contact__detail-value"
-                onMouseEnter={onEnter}
-                onMouseLeave={onLeave}
-              >
+           <a
+             href="mailto:contact@studioinkframe.in"
+  className="contact__detail-value"
+  onMouseEnter={onEnter}
+  onMouseLeave={onLeave}
+>
                 contact@studioinkframe.in
-              </a>
+            </a>
             </li>
             <li>
               <span className="contact__detail-label">Meet in</span>
