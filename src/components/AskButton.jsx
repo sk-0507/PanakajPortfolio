@@ -62,7 +62,7 @@ export default function AskButton({ onEnter, onLeave }) {
     <>
       {/* ── Ask my work ── */}
       <a
-        href="whatsapp://send?phone=91902130845"
+        href="whatsapp://send?phone=+91 9021320845"
         className="ask-btn"
         onMouseEnter={onEnter}
         onMouseLeave={onLeave}
