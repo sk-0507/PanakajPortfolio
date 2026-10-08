@@ -16,10 +16,16 @@ jobs:
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            cd /tmp/PanakajPortfolio
+            set -e
+            APP_DIR=/home/ubuntu/PanakajPortfolio
+            if [ ! -d "$APP_DIR/.git" ]; then
+              git clone https://github.com/sk-0507/PanakajPortfolio.git "$APP_DIR"
+            fi
+            cd "$APP_DIR"
             git pull origin main
             npm install
             npm run build
+            test -f build/index.html
             sudo rm -rf /var/www/html/*
             sudo cp -r build/* /var/www/html/
-            sudo systemctl restart nginx
+            sudo systemctl reload nginx
