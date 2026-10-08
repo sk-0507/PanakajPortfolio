@@ -62,7 +62,7 @@ export default function AskButton({ onEnter, onLeave }) {
     <>
       {/* ── Ask my work ── */}
       <a
-        href="mailto:contact@studioinkframe.in"
+        href="whatsapp://send?phone=91902130845"
         className="ask-btn"
         onMouseEnter={onEnter}
         onMouseLeave={onLeave}
